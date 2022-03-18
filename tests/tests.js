@@ -9,7 +9,7 @@ const Tests = {
 };
 
 function createResult(card, res, text) {
-    const icon = kpxcUI.createElement('i', res ? 'fa fa-check' : 'fa fa-close');
+    const icon = kpxcUI.createElement('i', res ? 'fa fa-check' : 'fa fa-close', { id: text });
     const span = kpxcUI.createElement('span', '', '', text);
     const br = document.createElement('br');
 
