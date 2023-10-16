@@ -107,6 +107,38 @@
         "message": "Den udfyldte adgangskode er længere end feltets maksimalt tilladte længde.",
         "description": "Error notification text shown when filled password is longer than defined maxLength of the input field."
     },
+    "errorMessageNoGroupsFound": {
+        "message": "Ingen grupper fundet.",
+        "description": "No groups found."
+    },
+    "errorMessageCannotCreateNewGroup": {
+        "message": "Kan ikke oprette ny gruppe.",
+        "description": "Cannot create new group."
+    },
+    "errorMessageNoValidUuidProvided": {
+        "message": "Ingen gyldig UUID angivet.",
+        "description": "No valid UUID provided."
+    },
+    "errorMessagePasskeysAttestationNotSupported": {
+        "message": "Attestation understøttes ikke.",
+        "description": "Attestation not supported."
+    },
+    "errorMessagePasskeysCredentialIsExcluded": {
+        "message": "Loginoplysning er udelukket.",
+        "description": "Credential is excluded."
+    },
+    "errorMessagePasskeysRequestCanceled": {
+        "message": "Anmodning om adgangsnøgler annulleret.",
+        "description": "Passkeys request canceled."
+    },
+    "errorMessagePasskeysInvalidUserVerification": {
+        "message": "Ugyldig brugerbekræftelse.",
+        "description": "Invalid user verification."
+    },
+    "errorMessagePasskeysEmptyPublicKey": {
+        "message": "Tom offentlig nøgle.",
+        "description": "Empty public key."
+    },
     "errorNotConnected": {
         "message": "Ikke forbundet til KeePassXC.",
         "description": "Error notification shown when not connected to KeePassXC"
@@ -680,7 +712,7 @@
         "description": "Show notifications checkbox text."
     },
     "optionsCheckboxUseMonochromeToolbarIcon": {
-        "message": "Use monochrome toolbar icon.",
+        "message": "Brug monokromt ikon på værktøjslinjen.",
         "description": "Use monochrome toolbar icon checkbox text."
     },
     "optionsSaveDomainOnly": {
@@ -696,11 +728,11 @@
         "description": "Redirect allowance range input text."
     },
     "optionsRedirectAllowanceHelpText": {
-        "message": "How many redirects are allowed until the banner disappears. Default value is 3. Maximum is infinite.",
+        "message": "Hvor mange omdirigeringer er tilladt, indtil banneret forsvinder. Standardværdien er 3. Maksimum er uendeligt.",
         "description": "Redirect allowance help text."
     },
     "optionsCheckboxAutoFillAndSend": {
-        "message": "Allow filling HTTP Basic Auth credentials.",
+        "message": "Tillad udfyldning af HTTP Basic Auth-loginoplysninger.",
         "description": "Allow filling HTTP Basic Auth credentials checkbox text."
     },
     "optionsDebugLogging": {
@@ -736,7 +768,7 @@
         "description": "Theme selection header text."
     },
     "optionsCredentialSortSelectionHeader": {
-        "message": "Sorter matchende oplysninger ud fra",
+        "message": "Sortér matchende loginoplysninger ud fra",
         "description": "Credential sort option header text."
     },
     "optionsThemeSelection": {
@@ -816,7 +848,7 @@
         "description": "Show notifications option help text."
     },
     "optionsUseMonochromeToolbarIconHelpText": {
-        "message": "Use a monochrome icon with colored badges in toolbar that adapts to light/dark browser theme.",
+        "message": "Brug et monokromt ikon med farvede badges i værktøjslinjen, der tilpasser sig det lyse/mørke browsertema.",
         "description": "Use monochrome toolbar icon option help text."
     },
     "optionsSaveDomainOnlyHelpText": {
@@ -832,7 +864,7 @@
         "description": "Download favicon after save checkbox label text."
     },
     "optionsDownloadFaviconAfterSaveHelpText": {
-        "message": "Favicon vil automatisk blive hentet for den nye oplysning.",
+        "message": "Favicon vil automatisk blive hentet for den nye loginoplysning.",
         "description": "Download favicon after save help text."
     },
     "optionsAutoFillAndSendHelpText": {
@@ -844,11 +876,11 @@
         "description": "HTTP Basic Auth image help text."
     },
     "optionsClearCredentialsTimeout": {
-        "message": "Ryd oplysninger fra ikke-aktive faner efter (sekunder, 0-3600).",
+        "message": "Ryd loginoplysninger fra ikke-aktive faner efter (sekunder, 0-3600).",
         "description": "Clear credentials label text."
     },
     "optionsClearCredentialsTimeoutHelpText": {
-        "message": "Oplysninger er ryddet fra baggrundsfaner efter timeouten og der vil blive spurgt om tilladelser til disse sider igen.",
+        "message": "Loginoplysninger ryddes fra baggrundsfaner efter tidsudløbet og der vil blive spurgt om tilladelser til disse sider igen.",
         "description": "Clear credentials timeout help text."
     },
     "optionsVersionInfoText": {
@@ -1000,27 +1032,27 @@
         "description": "Sort matching credentials by group and username option selection."
     },
     "optionsFillSortPriority": {
-        "message": "Sorter legitimationsoplysninger efter udfyldning efter",
+        "message": "Sortér loginoplysninger efter udfyldning efter",
         "description": ""
     },
     "optionsFillSortPriorityHelpText": {
-        "message": "Når Indstillingen Relevant legitimationsoplysninger først er valgt, angives legitimationsoplysningerne for tidligere udfyldt login som først i Autofuldførelsesmenuens liste.",
+        "message": "Når første mulighed i Relevante loginoplysninger er valgt, angives loginoplysninger for tidligere udfyldt login som første i Autofuldførelsesmenuens liste.",
         "description": "Help text for Sort credentials after fill."
     },
     "optionsFillSortPriorityTotp": {
-        "message": "Sorter legitimationsoplysninger efter udfyldning for TOTP efter",
+        "message": "Sortér loginoplysninger efter udfyldning for TOTP efter",
         "description": ""
     },
     "optionsFillSortPriorityTotpHelpText": {
-        "message": "Når indstillingen Relevant legitimationsoplysninger først er valgt, angives TOTP for tidligere udfyldt login som først i Autofuldførelsesmenuens liste.",
+        "message": "Når første mulighed i Relevante loginoplysninger er valgt, angives TOTP for tidligere udfyldt login som første i Autofuldførelsesmenuens liste.",
         "description": "Help text for Sort credentials after fill for TOTP."
     },
     "optionsFillSortByMatchingCredentials": {
-        "message": "Indstilling for matchende legitimationsoplysninger",
+        "message": "Indstilling for matchende loginoplysninger",
         "description": "Default option for Sort after fill. Respects the Matching Credentials sorting setting."
     },
     "optionsFillSortByRelevantEntry": {
-        "message": "Relevant legitimation først",
+        "message": "Relevant loginoplysning først",
         "description": "Relevant credential first option for Sort after fill."
     },
     "optionsCustomFieldsNotFound": {
@@ -1176,7 +1208,7 @@
         "description": "Filling credentials title in settings page"
     },
     "optionsSavingCredentialsTitle": {
-        "message": "Gemning af loginoplysninger",
+        "message": "Lagring af loginoplysninger",
         "description": "Saving credentials title in settings page"
     },
     "optionsUpdatesTitle": {
@@ -1190,6 +1222,26 @@
     "optionsExtensionTitle": {
         "message": "Udvidelse",
         "description": "Extension title in settings page"
+    },
+    "optionsPasskeysTitle": {
+        "message": "Adgangsnøgler",
+        "description": "Passkeys settings title in settings page."
+    },
+    "optionsPasskeysEnable": {
+        "message": "Aktivér adgangsnøgler",
+        "description": "Enabled Passkeys option text."
+    },
+    "optionsPasskeysEnableHelpText": {
+        "message": "Aktivér understøttelse af webgodkendelse.",
+        "description": "Passkeys option help text."
+    },
+    "optionsPasskeysEnableFallback": {
+        "message": "Aktivér adgangsnøgle-alternativ",
+        "description": "Enabled Passkeys fallback option text."
+    },
+    "optionsPasskeysEnableFallbackHelpText": {
+        "message": "Når aktiveret, vil en mislykket eller annulleret anmodning til KeePassXC udløse browserens egen interne Adgangsnøgle-anmodning. Hvis deaktiveret, kræves der forbindelse til KeePassXC, og en annulleret anmodning vil mislykkes. Standard: aktiveret.",
+        "description": "Passkeys fallback option help text."
     },
     "openNewTab": {
         "message": "Åbner et nyt faneblad",
