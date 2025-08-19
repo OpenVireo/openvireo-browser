@@ -413,6 +413,12 @@ kpxcFields.isSearchField = function(target) {
 
 // Returns true if element is visible on the page
 kpxcFields.isVisible = function(elem) {
+    // Returns true if opacity is not set, otherwise check the limits
+    const isOpacityAllowed = (opacity) => {
+        const opac = Number(opacity);
+        return opacity === '' || (opac >= MIN_OPACITY && opac <= MAX_OPACITY);
+    };
+
     // Check element position and size
     const rect = elem.getBoundingClientRect();
     if (rect.x < 0
@@ -426,16 +432,15 @@ kpxcFields.isVisible = function(elem) {
 
     // Check CSS visibility
     const elemStyle = getComputedStyle(elem);
-    const opacity = Number(elemStyle.opacity);
     if (elemStyle.visibility && (elemStyle.visibility === 'hidden' || elemStyle.visibility === 'collapse')
-        || (opacity < MIN_OPACITY || opacity > MAX_OPACITY)
+        || !isOpacityAllowed(elemStyle.opacity)
         || parseInt(elemStyle.width, 10) <= MIN_INPUT_FIELD_WIDTH_PX
         || parseInt(elemStyle.height, 10) <= MIN_INPUT_FIELD_WIDTH_PX) {
         return false;
     }
 
     // Check for parent opacity
-    if (kpxcFields.traverseParents(elem, f => f.style.opacity === '0')) {
+    if (kpxcFields.traverseParents(elem, f => !isOpacityAllowed(f.style.opacity))) {
         return false;
     }
 
