@@ -1,3 +1,7 @@
+1.9.9.2 (2025-08-21)
+=========================
+- Fix parent element opacity check for better clickjacking attempt prevention [#2641]
+
 1.9.9.1 (2025-07-03)
 =========================
 - Move privacy permission to optional permissions list [#2595, #2601]
