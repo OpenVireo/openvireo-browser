@@ -1028,6 +1028,13 @@ kpxc.reconnect = async function() {
 
 const isIframeAllowed = async function() {
     sendMessage('iframe_detected', false);
+
+    // Don't allow sandboxed iframes
+    if (self.origin === null || self.origin === 'null') {
+        logDebug('Error: Sandboxed iframes are not allowed');
+        return false;
+    }
+
     try {
         // Check for Cross-domain security error when inspecting window.top.location.href
         const currentLocation = window.top.location.href;
