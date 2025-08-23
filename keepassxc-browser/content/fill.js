@@ -217,7 +217,7 @@ kpxcFill.fillFromUsernameIcon = async function(combination) {
  */
 kpxcFill.fillInCredentials = async function(combination, predefinedUsername, uuid, passOnly = false) {
     if (kpxc.credentials.length === 0) {
-        kpxcUI.createNotification('error', tr('credentialsNoLoginsFound'));
+        showErrorNotification(`${tr('credentialsNoLoginsFound')} ${document.location.origin}`);
         return;
     }
 
@@ -358,6 +358,9 @@ const showErrorNotification = async function(errorMessage, notificationType = 'e
     const connectedDatabase = await sendMessage('get_connected_database');
     if (!connectedDatabase?.identifier) {
         kpxcUI.createNotification('error', tr('errorCurrentDatabaseNotConnected'));
+    } else if (!await isIframeAllowed()) {
+        // Special error if we are blocking due to iframe
+        kpxcUI.createNotification('error', tr('credentialsBlockedInIframe'));
     } else {
         kpxcUI.createNotification(notificationType, errorMessage);
     }

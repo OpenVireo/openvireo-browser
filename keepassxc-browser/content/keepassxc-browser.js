@@ -646,7 +646,7 @@ kpxc.rememberCredentialsFromContextMenu = async function() {
 // Credential Banner can force the retrieval for reloading new/modified credentials.
 kpxc.retrieveCredentials = async function(force = false) {
     if (!await isIframeAllowed()) {
-        return [];
+        return;
     }
 
     kpxc.url = document.location.href;
