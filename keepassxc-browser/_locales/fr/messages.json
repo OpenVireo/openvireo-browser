@@ -370,6 +370,10 @@
         "message": "Aucun identifiant  n’a été trouvé.",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "La saisie des identifiants a été bloquée par un cadre intégré non fiable",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "Plus d’un identifiant a été trouvé dans KeePassXC",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

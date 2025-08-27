@@ -370,6 +370,10 @@
         "message": "未找到登录信息。",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "凭据填充在不可信 iframe 中被阻止。",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "在 KeePassXC 中找到多条登录信息！",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

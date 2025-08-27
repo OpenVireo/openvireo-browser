@@ -370,6 +370,10 @@
         "message": "ログイン情報が見つかりません。",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Credential fill blocked in untrusted iframe.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "KeePassXC に複数のログイン情報が見つかりました！",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

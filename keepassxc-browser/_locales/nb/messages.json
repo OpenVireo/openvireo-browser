@@ -370,6 +370,10 @@
         "message": "Fant ingen pålogginger.",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Credential fill blocked in untrusted iframe.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "Mer enn én pålogging ble funnet i KeePassXC!",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

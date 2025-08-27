@@ -370,6 +370,10 @@
         "message": "錯誤：\n找不到登錄資訊。",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Credential fill blocked in untrusted iframe.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "錯誤：\n在 KeePassXC 中找到多個登錄資訊！\n點選 KeePassXC-Browser 圖示來檢視更多選項。",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

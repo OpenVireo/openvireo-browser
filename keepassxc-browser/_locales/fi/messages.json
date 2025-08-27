@@ -370,6 +370,10 @@
         "message": "Virhe:\nTunnuksia ei löydy.",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Tietueiden täyttö estettiin epäluotettavaan iframe-upotukseen.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "Virhe:\nKeePassXC löysi useampia tilitietoja!\nPaina selainlaajennuksen ikonia nähdäksesi lisävalinnat.",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

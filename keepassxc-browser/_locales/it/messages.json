@@ -370,6 +370,10 @@
         "message": "Errore:\nNessun accesso trovato.",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Credential fill blocked in untrusted iframe.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "In KeePassXC è stato trovato più di un accesso!",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

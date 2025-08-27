@@ -370,6 +370,10 @@
         "message": "Nu s-au găsit autentificări.",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Credential fill blocked in untrusted iframe.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "În KeePassXC s-au găsit mai multe autentificări!",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

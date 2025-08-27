@@ -370,6 +370,10 @@
         "message": "Hiba:\nNem találhatók bejelentkezések.",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Credential fill blocked in untrusted iframe.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "Hiba:\nTöbb mint egy bejelentkezés található a KeePassXC programban!\nNyomja meg a KeePassXC-böngésző ikont a több lehetőségért.",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."
