@@ -370,6 +370,10 @@
         "message": "Fel:\nInga inloggningar hittades.",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Ifyllning av inloggningsuppgifter blockerad av otillförlitlig iframe.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "Fel:\nMer än en inloggning hittades i KeePassXC!\nTryck på ikonen för KeePassXC-Browser för fler alternativ.",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

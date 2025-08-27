@@ -370,6 +370,10 @@
         "message": "Не са намерени данни за вход.",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Попълването на регистрации е спряно в несигурна рамка.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "Повече от една регистрация е намерена в KeePassXC!",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

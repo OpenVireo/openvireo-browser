@@ -370,6 +370,10 @@
         "message": "No se encontraron inicios de sesión.",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Credential fill blocked in untrusted iframe.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "¡Se encontró más de un inicio de sesión en KeePassXC!",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

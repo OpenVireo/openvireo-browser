@@ -370,6 +370,10 @@
         "message": "Geen inloggegevens aangetroffen.",
         "description": "Shown when no credentials are found for the current page."
     },
+    "credentialsBlockedInIframe": {
+        "message": "Invulling van de inloggegevens geblokkeerd in niet-vertrouwd iframe.",
+        "description": "Alert message when filling credentials is blocked due to iframe restrictions."
+    },
     "credentialsMultipleFound": {
         "message": "Er zijn meerdere inloggegevens aangetroffen in KeePassXC!",
         "description": "Alert message when trying to fill username and/or password when multiple credentials are found."

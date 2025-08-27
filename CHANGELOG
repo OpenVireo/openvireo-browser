@@ -1,3 +1,11 @@
+1.9.9.3 (2025-08-27)
+=========================
+- Add protection against style changes for wrapper div elements [#2646]
+- Add protection against for sandboxed iframes [#2648]
+- Add protection against overlays [#2651]
+- Add protection against html, body and form opacity [#2653]
+- Add error message for untrusted iframes during fill [#2649]
+
 1.9.9.2 (2025-08-21)
 =========================
 - Fix parent element opacity check for better clickjacking attempt prevention [#2641]
