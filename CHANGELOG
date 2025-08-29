@@ -1,3 +1,7 @@
+1.9.9.4 (2025-08-29)
+=========================
+- Fix topmost element check with Shadow DOM [#2659]
+
 1.9.9.3 (2025-08-27)
 =========================
 - Add protection against style changes for wrapper div elements [#2646]
