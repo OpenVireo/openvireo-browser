@@ -534,7 +534,7 @@ kpxcFields.useCustomLoginFields = async function() {
     // Get all input fields from the page without any extra filters
     const inputFields = [];
     document.body.querySelectorAll('input, select, textarea').forEach(e => {
-        if (e.type !== 'hidden' && !e.disabled && kpxcFields.isTopElement(e, e?.getBoundingClientRect())) {
+        if (e.type !== 'hidden' && !e.disabled) {
             inputFields.push(e);
         }
     });
