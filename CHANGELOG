@@ -1,3 +1,8 @@
+1.9.9.5 (2025-09-3)
+=========================
+- Fix topmost input element check with labels [#2667]
+- Fix Custom Login Fields with topmost element check [#2673]
+
 1.9.9.4 (2025-08-29)
 =========================
 - Fix topmost element check with Shadow DOM [#2659]
