@@ -330,7 +330,9 @@ const getShadowDOM = function(elem) {
 const treeWalkerFilter = function(node) {
     return !node ||
         node?.disabled ||
-        (typeof node?.getAttribute !== 'undefined' && node?.getLowerCaseAttribute('type') === 'hidden')
+        (node instanceof Element
+            && typeof node?.getAttribute === 'function'
+            && node?.getLowerCaseAttribute('type') === 'hidden')
         ? NodeFilter.FILTER_REJECT
         : NodeFilter.FILTER_ACCEPT;
 };
