@@ -1,4 +1,10 @@
-1.9.9.5 (2025-09-3)
+1.9.9.6 (2025-09-09)
+=========================
+- Add caching to overlay detection for improved performance [#2670]
+- Fix protection against form overlays [#2676]
+- Fix using custom functions with Elements in TreeWalker [#2677]
+
+1.9.9.5 (2025-09-03)
 =========================
 - Fix topmost input element check with labels [#2667]
 - Fix Custom Login Fields with topmost element check [#2673]
