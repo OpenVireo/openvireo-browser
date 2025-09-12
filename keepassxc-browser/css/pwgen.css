@@ -1,5 +1,7 @@
 .kpxc-pwgen-icon {
+    border: 0;
     cursor: pointer;
+    padding: 0 !important;
     position: absolute;
 }
 

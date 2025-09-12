@@ -68,9 +68,7 @@ UsernameFieldIcon.prototype.initField = function(field) {
 
 UsernameFieldIcon.prototype.createIcon = function(field) {
     const className = getIconClassName(this.databaseState);
-
-    // Size the icon dynamically, but not greater than 24 or smaller than 14
-    const size = Math.max(Math.min(24, field.offsetHeight - 4), 14);
+    const size = this.calculateIconSize(field);
 
     // Don't create the icon if the input field is too small
     if (field.offsetWidth < (size * 1.5) || field.offsetHeight < size) {
@@ -78,16 +76,14 @@ UsernameFieldIcon.prototype.createIcon = function(field) {
         return;
     }
 
-    const offset = kpxcUI.calculateIconOffset(field, size);
-
     const icon = kpxcUI.createElement('div', 'kpxc kpxc-username-icon ' + className,
         {
             'title': getIconText(this.databaseState),
             'size': size,
-            'offset': offset,
-            'kpxc-pwgen-field-id': field.getAttribute('data-kpxc-id')
+            'kpxc-pwgen-field-id': field.getAttribute('data-kpxc-id'),
+            'popover': 'manual'
         });
-    icon.style.zIndex = '10000000';
+    icon.style.margin = 0;
     icon.style.width = Pixels(size);
     icon.style.height = Pixels(size);
 
@@ -97,7 +93,7 @@ UsernameFieldIcon.prototype.createIcon = function(field) {
         }
 
         if (e.shiftKey) {
-            icon.style.display = 'none';
+            icon.hidePopover();
             return;
         }
 
@@ -111,6 +107,7 @@ UsernameFieldIcon.prototype.createIcon = function(field) {
     kpxcUI.setIconPosition(icon, field, this.rtl);
     this.icon = icon;
     this.createWrapper('css/username.css');
+    icon.showPopover();
 };
 
 const iconClicked = async function(field, icon) {

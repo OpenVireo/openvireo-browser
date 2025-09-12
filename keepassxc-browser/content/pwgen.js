@@ -50,18 +50,17 @@ PasswordIcon.prototype.initField = function(field) {
 
 PasswordIcon.prototype.createIcon = function(field) {
     const className = (isFirefox() ? 'key-moz' : 'key');
-    const size = (field.offsetHeight > 28) ? 24 : 16;
-    const offset = kpxcUI.calculateIconOffset(field, size);
+    const size = this.calculateIconSize(field);
 
     const icon = kpxcUI.createElement('div', 'kpxc kpxc-pwgen-icon ' + className,
         {
             'title': tr('passwordGeneratorGenerateText'),
             'size': size,
-            'offset': offset,
-            'kpxc-pwgen-field-id': field.getAttribute('data-kpxc-id') // Needed?
+            'kpxc-pwgen-field-id': field.getAttribute('data-kpxc-id'),
+            'popover': 'manual'
         });
 
-    icon.style.zIndex = '10000000';
+    icon.style.margin = 0;
     icon.style.width = Pixels(size);
     icon.style.height = Pixels(size);
 
@@ -75,7 +74,7 @@ PasswordIcon.prototype.createIcon = function(field) {
         }
 
         if (e.shiftKey) {
-            icon.style.display = 'none';
+            icon.hidePopover();
             return;
         }
 
@@ -89,6 +88,7 @@ PasswordIcon.prototype.createIcon = function(field) {
     kpxcUI.setIconPosition(icon, field, this.rtl);
     this.icon = icon;
     this.createWrapper('css/pwgen.css');
+    icon.showPopover();
 };
 
 

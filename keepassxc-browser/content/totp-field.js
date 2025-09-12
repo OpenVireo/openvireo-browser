@@ -140,18 +140,15 @@ TOTPFieldIcon.prototype.initField = async function(field, segmented) {
 
 TOTPFieldIcon.prototype.createIcon = function(field, segmented = false) {
     const className = (isFirefox() ? 'moz' : 'default');
-
-    // Size the icon dynamically, but not greater than 24 or smaller than 14
-    const size = Math.max(Math.min(24, field.offsetHeight - 4), 14);
-    const offset = kpxcUI.calculateIconOffset(field, size);
+    const size = this.calculateIconSize(field);
 
     const icon = kpxcUI.createElement('div', 'kpxc kpxc-totp-icon ' + className,
         {
             'title': tr('totpFieldText'),
             'size': size,
-            'offset': offset
+            'popover': 'manual'
         });
-    icon.style.zIndex = '10000000';
+    icon.style.margin = 0;
     icon.style.width = Pixels(size);
     icon.style.height = Pixels(size);
 
@@ -167,7 +164,7 @@ TOTPFieldIcon.prototype.createIcon = function(field, segmented = false) {
         }
 
         if (e.shiftKey) {
-            icon.style.display = 'none';
+            icon.hidePopover();
             return;
         }
 
@@ -182,4 +179,5 @@ TOTPFieldIcon.prototype.createIcon = function(field, segmented = false) {
     kpxcUI.setIconPosition(icon, field, this.rtl, segmented);
     this.icon = icon;
     this.createWrapper('css/totp.css');
+    icon.showPopover();
 };

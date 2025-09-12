@@ -7,6 +7,9 @@ const MIN_INPUT_FIELD_OFFSET_WIDTH = 60;
 const MIN_OPACITY = 0.7;
 const MAX_OPACITY = 1;
 
+const MIN_ICON_SIZE = 14;
+const MAX_ICON_SIZE = 24;
+
 const BLUE_BUTTON = 'kpxc-button kpxc-blue-button';
 const GREEN_BUTTON = 'kpxc-button kpxc-green-button';
 const ORANGE_BUTTON = 'kpxc-button kpxc-orange-button';
@@ -50,6 +53,11 @@ class Icon {
         } catch (err) {
             logError(err);
         }
+    }
+
+    // Size the icon dynamically, but not greater than 24 or smaller than 14
+    calculateIconSize(field) {
+        return Math.max(Math.min(MAX_ICON_SIZE, field.offsetHeight - 4), MIN_ICON_SIZE);
     }
 
     // Creates a wrapper div that has the icon in Shadow DOM
