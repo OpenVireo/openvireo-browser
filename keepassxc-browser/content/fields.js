@@ -433,7 +433,7 @@ kpxcFields.isSearchField = function(target) {
 
 // :popover-open selector is supported only with Firefox >= 125 and Chrome >= 114
 kpxcFields.discoverOverlays = function() {
-    try { 
+    try {
         kpxcFields.overlays = document.querySelectorAll(':popover-open, [popover]');
     } catch (e) {
         // Ignore SyntaxError (e.g., unsupported selector)

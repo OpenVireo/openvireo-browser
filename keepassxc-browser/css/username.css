@@ -1,6 +1,8 @@
 .kpxc-username-icon {
-    position: absolute;
+    border: 0;
     cursor: pointer;
+    padding: 0 !important;
+    position: absolute;
 }
 
 .kpxc-username-icon.disconnected {
