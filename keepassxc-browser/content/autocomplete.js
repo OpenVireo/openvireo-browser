@@ -130,7 +130,9 @@ class Autocomplete {
 
         this.updateList();
         this.container.classList.add('kpxcAutocomplete-container--visible');
-        this.container.showPopover({ source: inputField });
+        if (kpxcFields.popoverSupported) {
+            this.container.showPopover({ source: inputField });
+        }
         this.updatePosition();
     }
 
@@ -238,7 +240,9 @@ class Autocomplete {
         }
 
         this.container.classList.remove('kpxcAutocomplete-container--visible');
-        this.container.hidePopover();
+        if (kpxcFields.popoverSupported) {
+            this.container.hidePopover();
+        }
     }
 
     getAllItems() {

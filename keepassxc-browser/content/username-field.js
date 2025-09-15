@@ -83,7 +83,12 @@ UsernameFieldIcon.prototype.createIcon = function(field) {
             'kpxc-pwgen-field-id': field.getAttribute('data-kpxc-id'),
             'popover': 'manual'
         });
-    icon.style.margin = 0;
+    
+    if (kpxcFields.popoverSupported) {
+        icon.style.margin = 0;
+    } else {
+        icon.style.zIndex = '10000000';
+    }
     icon.style.width = Pixels(size);
     icon.style.height = Pixels(size);
 
@@ -93,7 +98,11 @@ UsernameFieldIcon.prototype.createIcon = function(field) {
         }
 
         if (e.shiftKey) {
-            icon.hidePopover();
+            if (kpxcFields.popoverSupported) {
+                icon.hidePopover();
+            } else {
+                icon.style.display = 'none';
+            }
             return;
         }
 
@@ -107,7 +116,9 @@ UsernameFieldIcon.prototype.createIcon = function(field) {
     kpxcUI.setIconPosition(icon, field, this.rtl);
     this.icon = icon;
     this.createWrapper('css/username.css');
-    icon.showPopover();
+    if (kpxcFields.popoverSupported) {
+        icon.showPopover();
+    }
 };
 
 const iconClicked = async function(field, icon) {
