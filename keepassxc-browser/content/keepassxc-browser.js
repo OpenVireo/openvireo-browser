@@ -519,7 +519,7 @@ kpxc.prepareCredentials = async function() {
     kpxc.initAutocomplete();
 
     if (kpxc.settings.autoFillRelevantCredential) {
-        const pageUuid = await sendMessage('page_get_login_id');
+        const pageUuid = await sendMessage('page_get_login_id', false);
         if (pageUuid) {
             const relevantCredential = kpxc.credentials.find(c => c.uuid === pageUuid);
             const combination = kpxc.combinations?.at(-1);

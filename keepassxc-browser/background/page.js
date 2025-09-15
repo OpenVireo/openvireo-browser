@@ -257,11 +257,11 @@ page.retrieveCredentials = async function(tab, args = []) {
     return credentials;
 };
 
-page.getLoginId = async function(tab) {
+page.getLoginId = async function(tab, returnSingle = true) {
     const currentTab = page.tabs[tab.id];
 
     // If there's only one credential available and loginId is not set
-    if (currentTab && !currentTab.loginId && currentTab.credentials.length === 1) {
+    if (currentTab && returnSingle && !currentTab.loginId && currentTab.credentials.length === 1) {
         return currentTab.credentials[0].uuid;
     }
 
