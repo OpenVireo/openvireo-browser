@@ -148,7 +148,12 @@ TOTPFieldIcon.prototype.createIcon = function(field, segmented = false) {
             'size': size,
             'popover': 'manual'
         });
-    icon.style.margin = 0;
+
+    if (kpxcFields.popoverSupported) {
+        icon.style.margin = 0;
+    } else {
+        icon.style.zIndex = '10000000';
+    }
     icon.style.width = Pixels(size);
     icon.style.height = Pixels(size);
 
@@ -164,7 +169,11 @@ TOTPFieldIcon.prototype.createIcon = function(field, segmented = false) {
         }
 
         if (e.shiftKey) {
-            icon.hidePopover();
+            if (kpxcFields.popoverSupported) {
+                icon.hidePopover();
+            } else {
+                icon.style.display = 'none';
+            }
             return;
         }
 
@@ -179,5 +188,7 @@ TOTPFieldIcon.prototype.createIcon = function(field, segmented = false) {
     kpxcUI.setIconPosition(icon, field, this.rtl, segmented);
     this.icon = icon;
     this.createWrapper('css/totp.css');
-    icon.showPopover();
+    if (kpxcFields.popoverSupported) {
+        icon.showPopover();
+    }
 };

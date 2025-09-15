@@ -9,6 +9,7 @@ const MAX_SEGMENTED_FIELD_LENGTH = 100;
  * Provides methods for input field handling.
  */
 const kpxcFields = {};
+kpxcFields.popoverSupported = true;
 
 // Returns all username & password combinations detected from the inputs.
 // After username field is detected, first password field found after that will be saved as a combination.
@@ -438,6 +439,7 @@ kpxcFields.discoverOverlays = function() {
     } catch (e) {
         // Ignore SyntaxError (e.g., unsupported selector)
         if (!(e instanceof SyntaxError)) {
+            kpxcFields.popoverSupported = false;
             logError(e);
         }
     }
@@ -450,6 +452,7 @@ kpxcFields.hasOverlay = function(elem) {
     } catch (e) {
         // Ignore SyntaxError (e.g., unsupported selector)
         if (!(e instanceof SyntaxError)) {
+            kpxcFields.popoverSupported = false;
             logError(e);
         }
     }
