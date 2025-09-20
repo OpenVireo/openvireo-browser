@@ -99,7 +99,7 @@ const initContent = async () => {
         return;
     }
 
-    if (await chrome.runtime.sendMessage({ action: 'is_site_ignored', args: window.self.location.href })) {
+    if (await chrome.runtime.sendMessage({ action: 'is_site_ignored', args: [ window.self.location.href, true ] })) {
         console.log('This site is ignored in Site Preferences.');
         return;
     }

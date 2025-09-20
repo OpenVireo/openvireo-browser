@@ -120,6 +120,7 @@
         "IGNORE_FULL": "readonly",
         "IGNORE_NORMAL": "readonly",
         "IGNORE_NOTHING": "readonly",
+        "IGNORE_PASSKEYS": "readonly",
         "importScripts": "readonly",
         "IMPROVED_DETECTION_PREDEFINED_SITELIST": "readonly",
         "initColorTheme": "readonly",
