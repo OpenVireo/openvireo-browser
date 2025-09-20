@@ -495,6 +495,10 @@ kpxcFields.isTopElement = function(elem, rect) {
 
     // Check for popup overlays
     for (const overlay of kpxcFields.overlays ?? []) {
+        if (kpxcSites.overlayExceptionFound(overlay)) {
+            continue;
+        }
+
         const overlayRect = overlay?.getBoundingClientRect();
         if (overlayRect && elementsOverlap(rect, overlayRect)) {
             return false;

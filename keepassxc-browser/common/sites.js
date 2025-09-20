@@ -236,6 +236,20 @@ kpxcSites.popupExceptionFound = function(combinations) {
 };
 
 /**
+ * Handles exceptions where a certain element is set as a popover, and it prevents input field detections.
+ * @param {object} elem     Popover element
+ * @returns {boolean}       True if exception found
+ */
+kpxcSites.overlayExceptionFound = function(elem) {
+    if (document.location.href?.startsWith('https://github.com/login')
+        && elem?.nodeName === 'TOOL-TIP' && elem?.baseURI === 'https://github.com/login') {
+        return true;
+    }
+
+    return false;
+};
+
+/**
  * Handles a few exceptions for certain sites where Username Icon is not placed properly.
  * @param {number} left         Absolute left position of the icon
  * @param {number} top          Absolute top position of the icon
