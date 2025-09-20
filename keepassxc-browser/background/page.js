@@ -335,14 +335,15 @@ page.fillHttpAuth = async function(tab, credentials) {
     }
 };
 
-page.isSiteIgnored = async function(tab, currentLocation) {
+page.isSiteIgnored = async function(tab, args = []) {
+    const [ currentLocation, checkPasskeys ] = args;
     if (!page?.settings?.sitePreferences || !currentLocation) {
         return false;
     }
 
     for (const site of page.settings.sitePreferences) {
         if (siteMatch(site.url, currentLocation) || site.url === currentLocation) {
-            if (site.ignore === IGNORE_FULL) {
+            if (site.ignore === IGNORE_FULL || (checkPasskeys && site.ignore === IGNORE_PASSKEYS)) {
                 return true;
             }
         }

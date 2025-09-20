@@ -1118,8 +1118,8 @@
         "message": "Page URL",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Ignore",
+    "optionsColumnFeatures": {
+        "message": "Features",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1148,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Disable Auto-Submit",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Disable passkeys",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

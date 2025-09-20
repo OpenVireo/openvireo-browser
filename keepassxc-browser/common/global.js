@@ -6,6 +6,7 @@ const EXTENSION_NAME = 'KeePassXC-Browser';
 const IGNORE_NOTHING = 'ignoreNothing';
 const IGNORE_NORMAL = 'ignoreNormal';
 const IGNORE_AUTOSUBMIT = 'ignoreAutoSubmit';
+const IGNORE_PASSKEYS = 'ignorePasskeys';
 const IGNORE_FULL = 'ignoreFull';
 
 // Credential sorting options
