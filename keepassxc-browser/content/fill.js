@@ -265,7 +265,7 @@ kpxcFill.fillInCredentials = async function(combination, predefinedUsername, uui
     }
 
     // Fill username
-    if (combination.username && usernameValue &&
+    if (combination.username && usernameValue && combination.username !== combination.password &&
         (!combination.username.value || combination.username.value !== usernameValue)) {
         if (!passOnly) {
             kpxc.setValueWithChange(combination.username, usernameValue);
