@@ -99,7 +99,11 @@ const kpxcUI = {};
 kpxcUI.mouseDown = false;
 
 if (document.body) {
-    kpxcUI.bodyRect = document.body.getBoundingClientRect();
+    const bodyRect = document.body.getBoundingClientRect();
+    kpxcUI.bodyRect = {
+        left: bodyRect.left + window.pageXOffset,
+        top: bodyRect.top + window.pageYOffset
+    };
     kpxcUI.bodyStyle = getComputedStyle(document.body);
 }
 
