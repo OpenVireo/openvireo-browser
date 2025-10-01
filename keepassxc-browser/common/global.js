@@ -195,7 +195,7 @@ const getCurrentTab = async function() {
 };
 
 // Check if element b is inside a
-const isElementInside = (a, b) => (b.x >= a.x || b.right <= a.right) && (b.y >= a.y || b.bottom <= a.bottom);
+const isElementInside = (a, b) => (b.x >= a.x && b.right <= a.right) && (b.y >= a.y && b.bottom <= a.bottom);
 
 // Check if two elements overlap
 const elementsOverlap = function(rect1, rect2) {
