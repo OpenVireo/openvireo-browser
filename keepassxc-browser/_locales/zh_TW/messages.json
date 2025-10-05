@@ -371,7 +371,7 @@
         "description": "Shown when no credentials are found for the current page."
     },
     "credentialsBlockedInIframe": {
-        "message": "Credential fill blocked in untrusted iframe.",
+        "message": "憑證填入在不可信 iframe 而被阻止。",
         "description": "Alert message when filling credentials is blocked due to iframe restrictions."
     },
     "credentialsMultipleFound": {
@@ -677,6 +677,10 @@
     "optionsMenuSitePreferences": {
         "message": "網站設定",
         "description": "Site Preferences page header."
+    },
+    "optionsSitePreferencesSettings": {
+        "message": "設定",
+        "description": "Site Preferences settings button text."
     },
     "optionsMenuAbout": {
         "message": "關於",
@@ -1114,8 +1118,8 @@
         "message": "網頁 URL",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "忽略",
+    "optionsColumnFeatures": {
+        "message": "特性",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "停用自動送出",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "停用通行密鑰",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

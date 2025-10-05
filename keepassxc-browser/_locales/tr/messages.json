@@ -371,7 +371,7 @@
         "description": "Shown when no credentials are found for the current page."
     },
     "credentialsBlockedInIframe": {
-        "message": "Credential fill blocked in untrusted iframe.",
+        "message": "Güvenilmeyen bir iFrame nedeniyle kimlik doğrulama bilgilerinin doldurulması engellendi.",
         "description": "Alert message when filling credentials is blocked due to iframe restrictions."
     },
     "credentialsMultipleFound": {
@@ -677,6 +677,10 @@
     "optionsMenuSitePreferences": {
         "message": "Site ayarları",
         "description": "Site Preferences page header."
+    },
+    "optionsSitePreferencesSettings": {
+        "message": "Ayarlar",
+        "description": "Site Preferences settings button text."
     },
     "optionsMenuAbout": {
         "message": "Hakkında",
@@ -1114,8 +1118,8 @@
         "message": "Sayfa adresi",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Yok say",
+    "optionsColumnFeatures": {
+        "message": "Özellikler",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Otomatik gönderim yapılmasın",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Geçiş anahtarları kullanılmasın",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

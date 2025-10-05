@@ -371,7 +371,7 @@
         "description": "Shown when no credentials are found for the current page."
     },
     "credentialsBlockedInIframe": {
-        "message": "Credential fill blocked in untrusted iframe.",
+        "message": "Ausfüllen der Anmeldedaten in nicht vertrauenswürdigen iframes blockiert.",
         "description": "Alert message when filling credentials is blocked due to iframe restrictions."
     },
     "credentialsMultipleFound": {
@@ -677,6 +677,10 @@
     "optionsMenuSitePreferences": {
         "message": "Seiteneinstellungen",
         "description": "Site Preferences page header."
+    },
+    "optionsSitePreferencesSettings": {
+        "message": "Einstellungen",
+        "description": "Site Preferences settings button text."
     },
     "optionsMenuAbout": {
         "message": "Über",
@@ -1114,8 +1118,8 @@
         "message": "Seiten-URL",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Ignorieren",
+    "optionsColumnFeatures": {
+        "message": "Funktionen",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Automatisches Absenden deaktivieren",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Passkeys deaktivieren",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

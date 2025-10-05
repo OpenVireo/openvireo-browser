@@ -371,7 +371,7 @@
         "description": "Shown when no credentials are found for the current page."
     },
     "credentialsBlockedInIframe": {
-        "message": "凭据填充在不可信 iframe 中被阻止。",
+        "message": "凭据填充在不受信任的 iframe 中被阻止。",
         "description": "Alert message when filling credentials is blocked due to iframe restrictions."
     },
     "credentialsMultipleFound": {
@@ -677,6 +677,10 @@
     "optionsMenuSitePreferences": {
         "message": "网站设置",
         "description": "Site Preferences page header."
+    },
+    "optionsSitePreferencesSettings": {
+        "message": "设置",
+        "description": "Site Preferences settings button text."
     },
     "optionsMenuAbout": {
         "message": "关于",
@@ -1114,8 +1118,8 @@
         "message": "页面 URL",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "忽略",
+    "optionsColumnFeatures": {
+        "message": "功能",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "禁用自动提交",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "禁用通行密钥",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {
