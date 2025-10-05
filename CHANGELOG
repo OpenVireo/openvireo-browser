@@ -1,3 +1,21 @@
+1.9.10 (2025-10-05)
+=========================
+- Add Disable passkeys option to Site Preferences [#2694]
+- Add overlay exceptions feature to Predefined Sites [#2693]
+- Change DOM to use popover for icons and content [#2687]
+- Change some icons [#2706]
+- Fix detecting existing login combination [#2682]
+- Fix Mutation Observer to handle multiple element mutations (thanks mihai-vlc) [#2635]
+- Fix using popovers with Firefox ESR 115 [#2690]
+- Fix filling relevant entries [#2691]
+- Fix filling wrapped input fields [#2699]
+- Fix filling username to already filled field [#2700]
+- Fix ignore regex list (thanks EamonNerbonne) [#2711]
+- Fix is element inside function [#2714]
+- Fix handling window offsets for DOM content positioning [#2698]
+- Refactor Site Preferences options settings page [#2666]
+- Refactor browser information function [#2709]
+
 1.9.9.6 (2025-09-09)
 =========================
 - Add caching to overlay detection for improved performance [#2670]

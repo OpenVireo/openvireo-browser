@@ -678,6 +678,10 @@
         "message": "Site Preferences",
         "description": "Site Preferences page header."
     },
+    "optionsSitePreferencesSettings": {
+        "message": "Settings",
+        "description": "Site Preferences settings button text."
+    },
     "optionsMenuAbout": {
         "message": "Despre",
         "description": "About page header."
@@ -1114,8 +1118,8 @@
         "message": "URL Site",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Dezactivare funcții",
+    "optionsColumnFeatures": {
+        "message": "Features",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Dezactivează funcția de Auto-Trimite",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Disable passkeys",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

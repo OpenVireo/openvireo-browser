@@ -678,6 +678,10 @@
         "message": "Preferências do site",
         "description": "Site Preferences page header."
     },
+    "optionsSitePreferencesSettings": {
+        "message": "Settings",
+        "description": "Site Preferences settings button text."
+    },
     "optionsMenuAbout": {
         "message": "Acerca",
         "description": "About page header."
@@ -1114,8 +1118,8 @@
         "message": "URL da página",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Ignorar",
+    "optionsColumnFeatures": {
+        "message": "Features",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Desativar submissão automática",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Disable passkeys",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

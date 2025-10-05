@@ -678,6 +678,10 @@
         "message": "Предпочитания за сайтове",
         "description": "Site Preferences page header."
     },
+    "optionsSitePreferencesSettings": {
+        "message": "Настройки",
+        "description": "Site Preferences settings button text."
+    },
     "optionsMenuAbout": {
         "message": "Относно",
         "description": "About page header."
@@ -1114,8 +1118,8 @@
         "message": "Адрес на страница",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Пренебрегване",
+    "optionsColumnFeatures": {
+        "message": "Възможности",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Изключване на автоматично изпращане",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Изключване на Passkeys",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

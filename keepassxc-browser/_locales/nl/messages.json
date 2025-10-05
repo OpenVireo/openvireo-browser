@@ -678,6 +678,10 @@
         "message": "Websitevoorkeuren",
         "description": "Site Preferences page header."
     },
+    "optionsSitePreferencesSettings": {
+        "message": "Instellingen",
+        "description": "Site Preferences settings button text."
+    },
     "optionsMenuAbout": {
         "message": "Over",
         "description": "About page header."
@@ -1114,8 +1118,8 @@
         "message": "Pagina-url",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Negeren",
+    "optionsColumnFeatures": {
+        "message": "Functies",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Automatisch indienen uitschakelen",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Passkeys uitschakelen",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

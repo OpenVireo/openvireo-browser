@@ -678,6 +678,10 @@
         "message": "Svetainės nuostatos",
         "description": "Site Preferences page header."
     },
+    "optionsSitePreferencesSettings": {
+        "message": "Settings",
+        "description": "Site Preferences settings button text."
+    },
     "optionsMenuAbout": {
         "message": "Apie",
         "description": "About page header."
@@ -1114,8 +1118,8 @@
         "message": "Puslapio URL",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Nepaisyti",
+    "optionsColumnFeatures": {
+        "message": "Features",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Automatinio pateikimo išjungimas",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Disable passkeys",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

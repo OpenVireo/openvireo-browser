@@ -678,6 +678,10 @@
         "message": "Sivustokohtaiset asetukset",
         "description": "Site Preferences page header."
     },
+    "optionsSitePreferencesSettings": {
+        "message": "Asetukset",
+        "description": "Site Preferences settings button text."
+    },
     "optionsMenuAbout": {
         "message": "Tietoja",
         "description": "About page header."
@@ -1114,8 +1118,8 @@
         "message": "Sivun URL",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Älä huomioi",
+    "optionsColumnFeatures": {
+        "message": "Ominaisuudet",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Automattisyöttö pois päältä",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Poista pääsyavaimet käytöstä",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

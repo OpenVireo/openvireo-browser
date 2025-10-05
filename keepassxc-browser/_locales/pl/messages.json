@@ -678,6 +678,10 @@
         "message": "Ustawienia witryn",
         "description": "Site Preferences page header."
     },
+    "optionsSitePreferencesSettings": {
+        "message": "Ustawienia",
+        "description": "Site Preferences settings button text."
+    },
     "optionsMenuAbout": {
         "message": "Informacje",
         "description": "About page header."
@@ -1114,8 +1118,8 @@
         "message": "Adres URL strony",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Ignorowanie",
+    "optionsColumnFeatures": {
+        "message": "Funkcje",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Wyłącz automatyczne przesyłanie",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Wyłącz klucze dostępu",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {

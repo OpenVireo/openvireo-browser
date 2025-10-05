@@ -678,6 +678,10 @@
         "message": "Préférences des sites",
         "description": "Site Preferences page header."
     },
+    "optionsSitePreferencesSettings": {
+        "message": "Paramètres",
+        "description": "Site Preferences settings button text."
+    },
     "optionsMenuAbout": {
         "message": "À propos",
         "description": "About page header."
@@ -1114,8 +1118,8 @@
         "message": "URL de la page",
         "description": "Site Preferences list column title."
     },
-    "optionsColumnIgnore": {
-        "message": "Ignorer",
+    "optionsColumnFeatures": {
+        "message": "Fonctions",
         "description": "Site Preferences list column title."
     },
     "optionsColumnUsernameOnly": {
@@ -1144,6 +1148,10 @@
     },
     "optionsSelectionAutoSubmit": {
         "message": "Désactiver l’envoi automatique",
+        "description": "Site Preferences option selection."
+    },
+    "optionsSelectionPasskeys": {
+        "message": "Désactiver les clés d’accès",
         "description": "Site Preferences option selection."
     },
     "optionsSelectionFull": {
