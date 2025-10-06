@@ -734,6 +734,10 @@
         "message": "Export settings",
         "description": "Export settings button text."
     },
+    "optionsButtonResetSettings": {
+        "message": "Reset all settings",
+        "description": "Reset all settings button text."
+    },
     "optionsLabelDefaultGroup": {
         "message": "Default group for saving new passwords:",
         "description": "Default group options text."
@@ -1073,6 +1077,10 @@
     "optionsImportSettingsDialogText": {
         "message": "Current settings will be overridden. Do you really want to import the settings file?",
         "description": "Import settings confirmation dialog help text."
+    },
+    "optionsResetSettingsDialogText": {
+        "message": "All settings will be reset to defaults. Are you sure?",
+        "description": "Reset all settings dialog text."
     },
     "optionsConnectedDatabasesText": {
         "message": "Databases connected to KeePassXC-Browser.",

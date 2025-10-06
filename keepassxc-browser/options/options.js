@@ -312,6 +312,24 @@ options.initGeneralSettings = async function() {
         }
     });
 
+    // Reset all settings modal
+    const dialogResetSettingsModal = new bootstrap.Modal('#dialogResetSettings',
+        { keyboard: true, focus: false, backdrop: true });
+
+    $('#dialogResetSettings').addEventListener('shown.bs.modal', function(modalEvent) {
+        modalEvent.currentTarget.querySelector('.modal-footer button.yes').focus();
+    });
+
+    $('#resetSettingsButton').addEventListener('click', function() {
+        dialogResetSettingsModal.show();
+    });
+
+    $('#dialogResetSettings .modal-footer button.yes').addEventListener('click', function(e) {
+        dialogResetSettingsModal.hide();
+        browser.runtime.sendMessage({ action: 'reset_all_settings' });
+        location.reload();
+    });
+
     $('#copyVersionToClipboard').addEventListener('click', function () {
         const copyText = document.getElementById('versionInfo').innerText;
         navigator.clipboard.writeText(copyText);

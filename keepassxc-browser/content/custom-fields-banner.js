@@ -8,7 +8,6 @@ const STEP_SELECT_STRING_FIELDS = 4;
 
 const CHECKBOX_OVERLAY_SIZE = 20;
 
-const DEFINED_CUSTOM_FIELDS = 'defined-custom-fields';
 const FIXED_FIELD_CLASS = 'kpxcDefine-fixed-field';
 const DARK_FIXED_FIELD_CLASS = 'kpxcDefine-fixed-field-dark';
 const HOVER_FIELD_CLASS = 'kpxcDefine-fixed-hover-field';
