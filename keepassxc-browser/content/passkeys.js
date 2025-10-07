@@ -201,12 +201,14 @@
     // select a software authenticator. This could be removed in the future.
     try {
         Object.defineProperty(navigator, 'credentials', { value: passkeysCredentials });
-        Object.defineProperty(window.PublicKeyCredential, 'isConditionalMediationAvailable', {
-            value: isConditionalMediationAvailable,
-        });
-        Object.defineProperty(window.PublicKeyCredential, 'isUserVerifyingPlatformAuthenticatorAvailable', {
-            value: isUserVerifyingPlatformAuthenticatorAvailable,
-        });
+        if (window.PublicKeyCredential) {
+            Object.defineProperty(window.PublicKeyCredential, 'isConditionalMediationAvailable', {
+                value: isConditionalMediationAvailable,
+            });
+            Object.defineProperty(window.PublicKeyCredential, 'isUserVerifyingPlatformAuthenticatorAvailable', {
+                value: isUserVerifyingPlatformAuthenticatorAvailable,
+            });
+        }
     } catch (err) {
         console.log('Cannot override navigator.credentials: ', err);
     }
