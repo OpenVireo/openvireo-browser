@@ -138,6 +138,16 @@ page.initSitePreferences = async function() {
     await browser.storage.local.set({ 'settings': page.settings });
 };
 
+page.resetAllSettings = async function() {
+    for (const [ key, value ] of Object.entries(defaultSettings)) {
+        page.settings[key] = value;
+    }
+
+    page.settings[DEFINED_CUSTOM_FIELDS] = {};
+    page.settings.sitePreferences = [];
+    await browser.storage.local.set({ 'settings': page.settings });
+};
+
 page.switchTab = async function(tab) {
     // Clears Fill Attribute selection from context menu
     page.setFillAttributeContextMenuItemVisible(false);

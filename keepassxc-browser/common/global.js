@@ -1,6 +1,7 @@
 'use strict';
 
 const EXTENSION_NAME = 'KeePassXC-Browser';
+const DEFINED_CUSTOM_FIELDS = 'defined-custom-fields';
 
 // Site Preferences ignore options
 const IGNORE_NOTHING = 'ignoreNothing';

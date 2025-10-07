@@ -559,6 +559,10 @@
                       <i class="fa fa-arrow-up" aria-hidden="true"></i>
                       <span data-i18n="optionsButtonExport"></span>
                     </button>
+                    <button class="btn btn-sm btn-danger ms-2" id="resetSettingsButton" data-i18n="[title]optionsButtonResetSettings">
+                      <i class="fa fa-undo" aria-hidden="true"></i>
+                      <span data-i18n="optionsButtonResetSettings"></span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -581,6 +585,30 @@
                       <button class="btn btn-sm yes btn-success">
                         <i class="fa fa-check" aria-hidden="true"></i>
                         <span data-i18n="optionsButtonImport"></span>
+                      </button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="dialogResetSettings" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel" data-i18n="optionsButtonResetSettings"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <p data-i18n="optionsResetSettingsDialogText"></p>
+                  </div>
+                  <div class="modal-footer">
+                      <button class="btn btn-sm btn-secondary" data-bs-dismiss="modal" aria-hidden="true">
+                        <i class="fa fa-remove" aria-hidden="true"></i>
+                        <span data-i18n="optionsButtonCancel"></span>
+                      </button>
+                      <button class="btn btn-sm yes btn-danger">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        <span data-i18n="optionsButtonReset"></span>
                       </button>
                   </div>
                   </div>
