@@ -518,7 +518,7 @@ page.getBaseDomainFromUrl = async function(hostname, url) {
 
 const createContextMenuItem = function({ action, args, ...options }) {
     return browser.contextMenus.create({
-        contexts: menuContexts,
+        contexts: page.menuContexts,
         id: action,
         ...options
     });
