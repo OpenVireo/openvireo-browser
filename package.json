@@ -4,7 +4,7 @@
   "description": "KeePassXC-Browser",
   "main": "build.js",
   "devDependencies": {
-    "@playwright/test": "^1.45.1",
+    "@playwright/test": "^1.56.1",
     "@types/node": "^20.14.10",
     "eslint": "^8.49.0"
   },
