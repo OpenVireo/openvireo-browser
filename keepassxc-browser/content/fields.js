@@ -479,7 +479,7 @@ kpxcFields.isTopElement = function(elem, rect) {
         const topElement = rootNode.elementFromPoint(x, elementRect.top + (elementRect.height / 2));
         return element?.labels &&
             element.labels[0] === topElement &&
-            isElementInside(elementRect, topElement.getBoundingClientRect())
+            elementsOverlap(elementRect, topElement.getBoundingClientRect())
             ? element
             : topElement;
     };
