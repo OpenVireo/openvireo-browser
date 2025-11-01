@@ -245,6 +245,17 @@ kpxcFill.fillInCredentials = async function(combination, predefinedUsername, uui
         skipAutoSubmit = selectedCredentials.skipAutoSubmit === 'true';
     }
 
+    // Update the password field if form has been updated with a new identical element (Moodle).
+    // If found, replace the new input field to the combination.
+    if (combination?.form && combination?.password && !combination.form.contains(combination.password)) {
+        const formInputs = kpxcObserverHelper.getInputs(combination.form);
+        const newPasswordField = formInputs?.find((formInput) =>
+            formInput?.getLowerCaseAttribute('type') === 'password');
+        if (newPasswordField && areNamedNodeMapsEqual(combination.password.attributes, newPasswordField.attributes)) {
+            combination.password = newPasswordField;
+        }
+    }
+
     // Fill password
     if (combination.password && matchesWithNodeName(combination.password, 'INPUT')) {
         // Show a notification if password length exceeds the length defined in input
@@ -426,4 +437,27 @@ const showErrorNotification = async function(errorMessage, notificationType = 'e
     } else {
         kpxcUI.createNotification(notificationType, errorMessage);
     }
+};
+
+// Checks if two NamedNodeMaps (attribute lists) are equal
+const areNamedNodeMapsEqual = function(currentNodeMap, newNodeMap) {
+    if (!currentNodeMap || !newNodeMap) {
+        return false;
+    }
+
+    const fieldAttributes = Array.from(currentNodeMap);
+    const newFieldAttributes = Array.from(newNodeMap);
+
+    if (fieldAttributes.length !== newFieldAttributes.length) {
+        return false;
+    }
+
+    for (const attr of fieldAttributes) {
+        const newAttr = newFieldAttributes.find((newAttr) => newAttr?.name === attr?.name);
+        if (!newAttr || newAttr?.value !== attr?.value) {
+            return false;
+        }
+    }
+
+    return true;
 };
