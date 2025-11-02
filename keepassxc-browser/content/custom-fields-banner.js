@@ -674,7 +674,7 @@ kpxcCustomLoginFieldsBanner.handleTopWindowMessage = function(args) {
         kpxcCustomLoginFieldsBanner.selection.totp = selection;
         kpxcCustomLoginFieldsBanner.setSelectedField();
     } else if (message === 'string_field_selected') {
-        kpxcCustomLoginFieldsBanner.selection.stringFields = selection;
+        kpxcCustomLoginFieldsBanner.selection.fields = selection;
         kpxcCustomLoginFieldsBanner.setSelectedField();
     } else if (message === 'enable_clear_data_button') {
         kpxcCustomLoginFieldsBanner.buttons.clearData.style.display = 'inline-block';
