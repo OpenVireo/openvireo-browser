@@ -406,6 +406,10 @@
         "message": "만료됨",
         "description": "If a credential is expired, this is appended to the title label."
     },
+    "credentialsRetrieveButton": {
+        "message": "Retrieve credentials",
+        "description": "Manual retrieve credentials button text."
+    },
     "fieldsFill": {
         "message": "오류:\n입력할 필드를 찾을 수 없습니다.",
         "description": "Alert message when no fields are found to fill in."
@@ -1053,6 +1057,10 @@
     "optionsKeePassXCVersionRequired": {
         "message": "필요한 KeePassXC 버전: $1",
         "description": "KeePassXC version requirement text."
+    },
+    "optionsMinimumKeePassXCVersionRequired": {
+        "message": "The extension requires KeePassXC version: $1. Earlier versions can cause unwanted behavior.",
+        "description": "KeePassXC minimum version requirement text."
     },
     "optionsDefault": {
         "message": "기본값: $1",
