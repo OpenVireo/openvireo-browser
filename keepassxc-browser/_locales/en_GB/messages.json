@@ -235,9 +235,25 @@
         "message": "user.id does not match the required length.",
         "description": "user.id does not match the required length."
     },
+    "errorMessagePasskeysEvalByCredentialNotSupported": {
+        "message": "evalByCredential is not supported at registration.",
+        "description": "evalByCredential is not supported at registration."
+    },
+    "errorMessagePasskeysEvalByCredentialNotEmpty": {
+        "message": "evalByCredential is not empty, but allowedCredentials is.",
+        "description": "evalByCredential is not empty, but allowedCredentials is."
+    },
+    "errorMessagePasskeysEvalByCredentialNotFound": {
+        "message": "Credential ID provided in evalByCredential not found.",
+        "description": "Credential ID provided in evalByCredential not found."
+    },
     "errorMessagePasskeysContextIsNotSecure": {
         "message": "Context is not secure.",
         "description": "Context is not secure."
+    },
+    "errorMessageCannotUseReferences": {
+        "message": "Username or password cannot contain references.",
+        "description": "Username or password cannot contain references."
     },
     "errorNotConnected": {
         "message": "Not connected to KeePassXC.",
@@ -1015,7 +1031,7 @@
         "description": "Show notifications option help text."
     },
     "optionsUseMonochromeToolbarIconHelpText": {
-        "message": "Use a monochrome icon with colored badges in toolbar that adapts to light/dark browser theme.",
+        "message": "Use a monochrome icon with coloured badges in toolbar that adapts to light/dark browser theme.",
         "description": "Use monochrome toolbar icon option help text."
     },
     "optionsUseCompactModeHelpText": {
