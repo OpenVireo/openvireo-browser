@@ -4,6 +4,7 @@
     "version": "1.10.4.1",
     "version_name": "1.10.4.1",
     "minimum_chrome_version": "124",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq3IH6NHrORuZ6cOe6D57ywyrSxzV1x1tWHOxMvOKeE/DmC9UbfjGCoA9L4iXqcsYlw8NHwWWNy6Ko928Jovh4iftZACD3PpC1mXcKQ61u1e4L5gwO86bTKzBoQREkEfXi9YKBL7QIqaYn2uM2KSeFFzR9JeYFKlUSU9ImxDYX8FEkl03V+Ez07R+2rJLa1LFDd6ksP7kHbVzFXXq7uSC0WKeWD47S/oMiVpYMbsco8pwIBZ/KB3WytdJ4YS6oagxCYcAkKwUXyNs6mQcN/Z7IrMO9mBZ5BR5sc5kRduKj+/jR9/zTLK6Z3RWLcVV8VbexjdrN3WWkOfymxtjiA32VwIDAQAB",
     "description": "__MSG_extensionDescription__",
     "author": "KeePassXC Team",
     "icons": {
