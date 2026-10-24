@@ -45,7 +45,7 @@
           "type": "integer"
         },
         "checkUpdateKeePassXC": {
-          "title": "When to check updates for KeePassXC. Default (never): 0",
+          "title": "When to check updates for OpenVireo. Default (never): 0",
           "type": "integer"
         },
         "clearCredentialsTimeout": {
@@ -115,7 +115,7 @@
           }
         },
         "downloadFaviconAfterSave": {
-          "title": "Downloads favicon in KeePassXC after credential is created. Default: false",
+          "title": "Downloads favicon in OpenVireo after credential is created. Default: false",
           "type": "boolean"
         },
         "passkeys": {

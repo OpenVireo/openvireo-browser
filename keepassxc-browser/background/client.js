@@ -3,7 +3,7 @@
 const keepassClient = {};
 keepassClient.keySize = 24;
 keepassClient.messageTimeout = 500; // Milliseconds
-keepassClient.nativeHostName = 'com.bonganimbigi.keepassxc_browser';
+keepassClient.nativeHostName = 'com.openvireo.browser';
 keepassClient.nativePort = null;
 keepassClient.webSocket = null;
 

@@ -10,7 +10,7 @@ body:
         Use the issue search box to see if one already exists for the bug you encountered.
         Also take a moment to review our pinned issues, and please check the
         troubleshooting guide:
-        https://github.com/keepassxreboot/keepassxc-browser/wiki/Troubleshooting-guide
+        https://github.com/openvireo/openvireo-browser/wiki/Troubleshooting-guide
       options:
       - label: Yes, I tried searching and reviewed the pinned issues
         required: true
@@ -46,6 +46,6 @@ body:
   - type: textarea
     id: debug_info
     attributes:
-      label: KeePassXC-Browser Debug Information
+      label: OpenVireo Browser Debug Information
       placeholder: "Paste the output of: Extension settings -> About -> Copy debug info to clipboard."
       render: Text

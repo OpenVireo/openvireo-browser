@@ -1,25 +1,24 @@
-# KeePassXC-Browser
+# OpenVireo Browser
 
-Browser extension for [KeePassXC](https://keepassxc.org/) with [native messaging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging).
+Browser extension for [OpenVireo](https://openvireo.com/) with [native messaging](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging).
+
+OpenVireo Browser is a fork of [KeePassXC-Browser](https://github.com/keepassxreboot/keepassxc-browser), and OpenVireo is a fork of [KeePassXC](https://keepassxc.org/). It is not affiliated with or endorsed by the KeePassXC Team.
 
 ## Download and use
 
-This browser extension was first supported in KeePassXC 2.3.0 (release end of 2017). In general it is advised to only use the latest available release.
+Use it with the latest OpenVireo desktop release. Store listings for Firefox, Chrome/Chromium and Microsoft Edge are not published yet; until then, load the extension unpacked (see [Development and testing](#development-and-testing)).
 
-Get the extension for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/) or [Chrome/Chromium](https://chromewebstore.google.com/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk) or [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/pdffhmdngciaglkoonimfcmckehcpafo).
-
-Please see this [document](https://keepassxc.org/docs/KeePassXC_GettingStarted.html#_browser_integration) for instructions how to configure KeePassXC in order to connect the database correctly.
+Please see this [document](https://openvireo.com/docs/OpenVireo_GettingStarted.html#_browser_integration) for instructions how to configure OpenVireo in order to connect the database correctly.
 
 ## How it works
 
-KeePassXC-Browser communicates with KeePassXC through _keepassxc-proxy_. The proxy handles listening to STDIN/STDOUT
-and transfers these messages through Unix domain sockets / named pipes to KeePassXC. This means KeePassXC can be used and started normally without interference from
-Native Messaging API. KeePassXC-Browser starts only the proxy application and there's no risk of shutting down KeePassXC or losing any unsaved changes. You don't need to install keepassxc-proxy separately. It is included in the KeePassXC application package. Alternatively you can use
-[keepassxc-proxy-rust](https://github.com/varjolintu/keepassxc-proxy-rust) as a proxy if you prefer a non-Qt solution.
+OpenVireo Browser communicates with OpenVireo through _openvireo-proxy_, registered as the native messaging host `com.openvireo.browser`. The proxy handles listening to STDIN/STDOUT
+and transfers these messages through Unix domain sockets / named pipes to OpenVireo. This means OpenVireo can be used and started normally without interference from
+Native Messaging API. OpenVireo Browser starts only the proxy application and there's no risk of shutting down OpenVireo or losing any unsaved changes. You don't need to install openvireo-proxy separately. It is included in the OpenVireo application package.
 
 ## Requested permissions
 
-KeePassXC-Browser extension requests the following permissions:
+OpenVireo Browser extension requests the following permissions:
 
 | Name  | Reason |
 | ----- | ----- |
@@ -27,7 +26,7 @@ KeePassXC-Browser extension requests the following permissions:
 | `contextMenus`            | To show context menu items |
 | `cookies`                 | To access browser's internal Public Suffix List |
 | `clipboardWrite`          | Allows password to be copied from password generator to clipboard |
-| `nativeMessaging`         | Allows communication with KeePassXC application |
+| `nativeMessaging`         | Allows communication with OpenVireo application |
 | `notifications`           | To show browser notifications |
 | `offscreen`               | For accessing system theme when setting icon colors (Chrome only) |
 | `privacy`                 | For setting the extension as default password manager |
@@ -37,17 +36,17 @@ KeePassXC-Browser extension requests the following permissions:
 | `webRequest`              | For handling HTTP Basic Auth |
 | `webRequestAuthProvider`  | For handling HTTP Basic Auth for Chromium based browsers |
 | `webRequestBlocking`      | For handling HTTP Basic Auth |
-| `http://*/*`              | To allow using KeePassXC-Browser on all websites |
-| `https://*/*`             | To allow using KeePassXC-Browser on all websites |
-| `https://api.github.com/` | For checking the latest KeePassXC version from GitHub |
+| `http://*/*`              | To allow using OpenVireo Browser on all websites |
+| `https://*/*`             | To allow using OpenVireo Browser on all websites |
+| `https://api.github.com/` | For checking the latest OpenVireo version from GitHub |
 
 ## Protocol
 
-Check [keepassxc-protocol](keepassxc-protocol.md) for the details about the messaging protocol used between the browser extension and KeePassXC.
+Check [keepassxc-protocol](keepassxc-protocol.md) for the details about the messaging protocol used between the browser extension and OpenVireo.
 
 ## Translations
 
-Translations are managed on [Transifex](https://explore.transifex.com/keepassxc/keepassxc-browser/) which offers a web interface. Please join an existing language team or request a new one if there is none.
+The translations come from the upstream KeePassXC-Browser project on [Transifex](https://explore.transifex.com/keepassxc/keepassxc-browser/), rebranded for OpenVireo. Build with `npm run build -- --skip-translations`: a plain `npm run build` runs `tx pull`, which would overwrite the rebranded strings with upstream ones.
 
 ## Contributing
 
@@ -55,8 +54,8 @@ You may directly contribute your own code by submitting a pull request. Please r
 
 ## Development and testing
 
-See [wiki](https://github.com/keepassxreboot/keepassxc-browser/wiki/Loading-the-extension-manually).
+See [wiki](https://github.com/openvireo/openvireo-browser/wiki/Loading-the-extension-manually).
 
 ## Help!
 
-See our [Troubleshooting Guide](https://github.com/keepassxreboot/keepassxc-browser/wiki/Troubleshooting-guide) for solving problems if previously listed issues and solutions are not working.
+See our [Troubleshooting Guide](https://github.com/openvireo/openvireo-browser/wiki/Troubleshooting-guide) for solving problems if previously listed issues and solutions are not working.
