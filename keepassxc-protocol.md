@@ -1,19 +1,19 @@
-## keepassxc-protocol
+## OpenVireo Browser protocol (keepassxc-protocol)
 
-Transmitting messages between KeePassXC and keepassxc-browser is totally rewritten. This is still under development.
+Transmitting messages between OpenVireo and OpenVireo Browser is totally rewritten. This is still under development.
 Now the requests are encrypted by [TweetNaCl.js](https://github.com/dchest/tweetnacl-js) box method and does the following:
 
-1. keepassxc-browser generates a key pair (with public and secret key) and transfers the public key to KeePassXC
-2. When KeePassXC receives the public key it generates its own key pair and transfers the public key to keepassxc-browser. Public key is transferred in plain-text. Secret keys are never transferred or used anywhere except when encrypting/decrypting.
-3. All messages between the browser extension and KeePassXC are now encrypted.
-4. When keepassxc-browser sends a message it is encrypted with KeePassXC's public key, a random generated nonce and keepassxc-browser's secret key.
-5. When KeePassXC sends a message it is encrypted with keepassxc-browser's public key and an incremented nonce.
-6. Databases are stored with newly created public key used with `associate`. A new key pair for data transfer is generated each time keepassxc-browser is launched. This saved key is not used again, as it's only used for identification.
+1. OpenVireo Browser generates a key pair (with public and secret key) and transfers the public key to OpenVireo
+2. When OpenVireo receives the public key it generates its own key pair and transfers the public key to OpenVireo Browser. Public key is transferred in plain-text. Secret keys are never transferred or used anywhere except when encrypting/decrypting.
+3. All messages between the browser extension and OpenVireo are now encrypted.
+4. When OpenVireo Browser sends a message it is encrypted with OpenVireo's public key, a random generated nonce and OpenVireo Browser's secret key.
+5. When OpenVireo sends a message it is encrypted with OpenVireo Browser's public key and an incremented nonce.
+6. Databases are stored with newly created public key used with `associate`. A new key pair for data transfer is generated each time OpenVireo Browser is launched. This saved key is not used again, as it's only used for identification.
 
 Thus there are three key pairs involved in every communication:
-- `host key` - A temporary key pair created by KeePassXC to encrypt the communication of the current session.
-- `client key` - A temporary key pair created by keepassxc-browser to encrypt the communication of the current session.
-- `identification key` - A permanent key pair created by keepassxc-browser used to authenticate the browser in later sessions after it was successfully *associated* with a database. This one should be stored safely by the browser. Note that only the public key part is ever used which might be a tiny flaw in the protocol since that part is also stored in the database.
+- `host key` - A temporary key pair created by OpenVireo to encrypt the communication of the current session.
+- `client key` - A temporary key pair created by OpenVireo Browser to encrypt the communication of the current session.
+- `identification key` - A permanent key pair created by OpenVireo Browser used to authenticate the browser in later sessions after it was successfully *associated* with a database. This one should be stored safely by the browser. Note that only the public key part is ever used which might be a tiny flaw in the protocol since that part is also stored in the database.
 
 Encrypted messages are built with these JSON parameters:
 - action - `test-associate`, `associate`, `get-logins`, `get-logins-count`, `set-login`...
@@ -23,12 +23,12 @@ Encrypted messages are built with these JSON parameters:
 - requestID (optional) - A random 8 character string. Used to identify error responses. Currently used only with `generate-password`.
 
 Currently these messages are implemented:
-- `associate`: Request for associating a new client with KeePassXC.
+- `associate`: Request for associating a new client with OpenVireo.
 - `change-public-keys`: Request for passing public keys from client to server and back.
 - `create-new-group`: Request for creating a new group to database.
-- `database-locked`: A signal from KeePassXC, the current active database is locked.
-- `database-unlocked`: A signal from KeePassXC, the current active database is unlocked.
-- `generate-password`: Request for generating a password. KeePassXC's settings are used.
+- `database-locked`: A signal from OpenVireo, the current active database is locked.
+- `database-unlocked`: A signal from OpenVireo, the current active database is unlocked.
+- `generate-password`: Request for generating a password. OpenVireo's settings are used.
 - `get-database-groups`: Returns all groups from the active database.
 - `get-databasehash`: Request for receiving the database hash (SHA256) of the current active database.
 - `get-logins`: Requests for receiving credentials for the current URL match.
@@ -38,7 +38,7 @@ Currently these messages are implemented:
 - `passkeys-register`: Request for Passkeys credential registration.
 - `request-autotype`: Performs Global Auto-Type.
 - `set-login`: Request for adding or updating credentials to the database.
-- `test-associate`: Request for testing if the client has been associated with KeePassXC.
+- `test-associate`: Request for testing if the client has been associated with OpenVireo.
 
 ### associate
 Unencrypted message:

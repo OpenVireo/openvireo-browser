@@ -1,9 +1,10 @@
 {
     "manifest_version": 2,
-    "name": "KeePassXC-Browser",
+    "name": "OpenVireo Browser",
+    "short_name": "OpenVireo",
     "version": "1.10.4.1",
     "description": "__MSG_extensionDescription__",
-    "author": "KeePassXC Team",
+    "author": "OpenVireo",
     "icons": {
         "16": "icons/keepassxc.svg",
         "32": "icons/keepassxc.svg",
@@ -22,7 +23,7 @@
             "38": "icons/keepassxc.svg",
             "64": "icons/keepassxc.svg"
         },
-        "default_title": "KeePassXC-Browser",
+        "default_title": "OpenVireo Browser",
         "default_popup": "popups/popup.html"
     },
     "options_ui": {
@@ -189,7 +190,7 @@
     ],
     "applications": {
         "gecko": {
-            "id": "keepassxc-browser@bonganimbigi.com",
+            "id": "browser@openvireo.com",
             "strict_min_version": "115.0"
         }
     },

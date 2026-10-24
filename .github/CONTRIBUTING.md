@@ -1,7 +1,7 @@
 
-# Contributing to KeePassXC-Browser
+# Contributing to OpenVireo Browser
 
-The following is a set of guidelines for contributing to KeePassXC-Browser on GitHub.
+The following is a set of guidelines for contributing to OpenVireo Browser on GitHub.
 These are just guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 #### Table of contents
@@ -43,7 +43,7 @@ If we reject your contribution, it means only that we do not consider it suitabl
 ## How can I contribute?
 ### Feature requests
 
-We're always looking for suggestions to improve our application. If you have a suggestion to improve an existing feature, or would like to suggest a completely new feature for KeePassXC, please use the [issue tracker on GitHub][issues-section].
+We're always looking for suggestions to improve our application. If you have a suggestion to improve an existing feature, or would like to suggest a completely new feature for OpenVireo, please use the [issue tracker on GitHub][issues-section].
 
 ### Bug reports
 
@@ -53,11 +53,11 @@ Before submitting a bug report, check if the problem has already been reported. 
 
 ### Discuss with the team
 
-As with feature requests, you can talk to the KeePassXC team about bugs, new features, other issues and pull requests on the dedicated issue tracker, on the [Matrix development channel](https://matrix.to/#/!RhJPJPGwQIFVQeXqZa:matrix.org?via=matrix.org), or in the IRC channel on Libera.Chat (`#keepassxc-dev` on `irc.libera.chat`, or use a [webchat link](https://web.libera.chat/#keepassxc-dev)).
+As with feature requests, you can talk to the OpenVireo maintainers about bugs, new features, other issues and pull requests on the dedicated [issue tracker][issues-section].
 
 ### Your first code contribution
 
-Unsure where to begin contributing to KeePassXC? You can start by looking through these `beginner` and `help-wanted` issues:
+Unsure where to begin contributing to OpenVireo? You can start by looking through these `beginner` and `help-wanted` issues:
 
 * [Beginner issues][beginner] – issues which should only require a few lines of code, and a test or two.
 * ['Help wanted' issues][help-wanted] – issues which should be a bit more involved than `beginner` issues.
@@ -76,8 +76,8 @@ All pull requests must comply with the above requirements and with the [stylegui
 
 ### Translations
 
-Translations are managed on [Transifex](https://explore.transifex.com/keepassxc/keepassxc-browser/) which offers a web interface.
-Please join an existing language team or request a new one if there is none.
+The translations come from the upstream KeePassXC-Browser project on [Transifex](https://explore.transifex.com/keepassxc/keepassxc-browser/), rebranded for OpenVireo.
+To fix or add a translation, edit `_locales/<lang>/messages.json` and open a pull request.
 
 If you open a Pull Request with new strings that require translations, it is enough to include new strings to the `_locales/en/messages.json` file.
 
@@ -189,8 +189,8 @@ if (['text1', 'text2', 'text3'].includes(inputText)) {
 Always use `const` and `let` to define a variable. Do not use `var`.
 
 
-[beginner]:https://github.com/keepassxreboot/keepassxc-browser/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22
-[code-of-conduct]:https://github.com/keepassxreboot/keepassxc/blob/develop/CODE-OF-CONDUCT.md
-[help-wanted]:https://github.com/keepassxreboot/keepassxc-browser/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22
-[issues-section]:https://github.com/keepassxreboot/keepassxc-browser/issues
-[extension-details]:https://github.com/keepassxreboot/keepassxc-browser/wiki/Extension-details@
+[beginner]:https://github.com/openvireo/openvireo-browser/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22
+[code-of-conduct]:https://github.com/openvireo/openvireo/blob/develop/CODE-OF-CONDUCT.md
+[help-wanted]:https://github.com/openvireo/openvireo-browser/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22
+[issues-section]:https://github.com/openvireo/openvireo-browser/issues
+[extension-details]:https://github.com/openvireo/openvireo-browser/wiki/Extension-details@

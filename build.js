@@ -31,7 +31,7 @@ const setVersion = async (manifest, version) => {
 
 const getDestinationFilename = async (manifest, version) => {
     const browser = manifest.substring(manifest.indexOf('_') + 1, manifest.indexOf('.'));
-    return `keepassxc-browser_${version}_${browser}.zip`;
+    return `openvireo-browser_${version}_${browser}.zip`;
 };
 
 const updateTranslations = async () => {
@@ -54,7 +54,7 @@ const createZipFile = async (fileName, path) => {
     const version = await getVersion();
 
     for (const browser in BROWSERS) {
-        console.log(`KeePassXC-Browser: Creating extension package for ${browser}`);
+        console.log(`OpenVireo Browser: Creating extension package for ${browser}`);
 
         const fileName = await getDestinationFilename(BROWSERS[browser], version);
         setVersion(`./dist/${BROWSERS[browser]}`, version);
