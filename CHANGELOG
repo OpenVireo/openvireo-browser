@@ -1,3 +1,9 @@
+1.0.0 (unreleased)
+=========================
+- First OpenVireo Browser release, versioned with the OpenVireo app from now on (based on KeePassXC-Browser 1.10.4.1)
+- Rebrand KeePassXC-Browser as OpenVireo Browser; it pairs with the OpenVireo app
+- Compare the app's own version (appVersion) with OpenVireo's releases for the update notice
+
 1.10.4.1 (2026-10-02)
 =========================
 - Add restrictions to cross-origin iframe handling (CVE-PENDING; Credits: NATO Cyber Security Centre (NCSC), Pedro Paniago NCIA/NCSC, @router0mail) [#3103]

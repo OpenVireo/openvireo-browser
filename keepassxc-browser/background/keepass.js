@@ -370,7 +370,7 @@ keepass.getDatabaseHash = async function(tab, args = []) {
             const parsed = JSON.parse(message);
             if (keepassClient.verifyDatabaseResponse(parsed, incrementedNonce) && parsed.hash) {
                 const oldDatabaseHash = keepass.databaseHash;
-                keepass.setcurrentKeePassXCVersion(parsed.version);
+                keepass.setcurrentKeePassXCVersion(parsed);
                 keepass.databaseHash = parsed.hash || '';
 
                 if (oldDatabaseHash && oldDatabaseHash !== keepass.databaseHash) {
@@ -433,7 +433,7 @@ keepass.changePublicKeys = async function(tab, enableTimeout = false, connection
 
     try {
         const response = await keepassClient.sendNativeMessage(request, enableTimeout, connectionTimeout);
-        keepass.setcurrentKeePassXCVersion(response.version);
+        keepass.setcurrentKeePassXCVersion(response);
         keepass.updateFeaturesList(response.version);
 
         if (!keepassClient.verifyKeyResponse(response, key, incrementedNonce)) {
@@ -885,9 +885,11 @@ keepass.isAssociated = function() {
     return (keepass.associated.value && keepass.associated.hash && keepass.associated.hash === keepass.databaseHash);
 };
 
-keepass.setcurrentKeePassXCVersion = function(version) {
-    if (version) {
-        keepass.currentKeePassXC = version;
+// OpenVireo sends its own version as appVersion, for comparing with its releases. "version" is the KeePassXC
+// release it is based on, which only enables features. Apps without appVersion are 0.9.0, the first beta.
+keepass.setcurrentKeePassXCVersion = function(response) {
+    if (response?.version) {
+        keepass.currentKeePassXC = response.appVersion || '0.9.0';
     }
 };
 
