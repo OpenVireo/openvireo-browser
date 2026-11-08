@@ -534,6 +534,14 @@
         "message": "OpenVireo Browser has not yet connected to OpenVireo but has been configured using the identifier: $1",
         "description": "A popup message shown when OpenVireo is not connected but configured."
     },
+    "popupConnectedTitle": {
+        "message": "Connected",
+        "description": "Popup status heading when the extension is connected to OpenVireo."
+    },
+    "popupLoginSearchPlaceholder": {
+        "message": "Search logins",
+        "description": "Placeholder for the search field in the credential selection popup."
+    },
     "popupConfiguredAndAssociated": {
         "message": "OpenVireo Browser is connected to OpenVireo and has been configured using the following identifier: $1",
         "description": "A popup message when a connection to OpenVireo is successful."

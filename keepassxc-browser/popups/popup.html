@@ -3,10 +3,11 @@
   <head>
     <title data-i18n="popupTitle"></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/colors.css">
-    <link rel="stylesheet" href="popup.css">
     <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../fonts/fork-awesome.min.css">
+    <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="popup.css">
     <script src="../common/browser-polyfill.min.js"></script>
     <script src="../common/global.js"></script>
     <script src="../common/global_ui.js"></script>
@@ -17,19 +18,23 @@
   </head>
   <body>
     <div class="container">
-      <div id="settings" class="settings">
+      <header id="settings" class="settings">
+        <div class="brand">
+          <img class="brand-logo" src="../icons/keepassxc.svg" alt="">
+          <span class="brand-name">OpenVireo</span>
+        </div>
         <div class="action-buttons-area">
-          <button id="options-button" class="btn btn-sm btn-success" data-i18n="[title]popupSettingsText">
+          <button id="choose-custom-login-fields-button" class="btn icon-btn" data-i18n="[title]popupChooseCredentialsText">
+            <i class="fa fa-crosshairs" aria-hidden="true"></i>
+          </button>
+          <button id="options-button" class="btn icon-btn" data-i18n="[title]popupSettingsText">
             <i class="fa fa-cog" aria-hidden="true"></i>
           </button>
-          <button id="choose-custom-login-fields-button" class="btn btn-sm btn-warning" data-i18n="[title]popupChooseCredentialsText"></button>
-        </div>
-        <div class="lock-button-area">
-          <button id="lock-database-button" class="btn btn-sm btn-danger" data-i18n="[title]lockDatabase">
+          <button id="lock-database-button" class="btn icon-btn" data-i18n="[title]lockDatabase">
             <i class="fa fa-lock" aria-hidden="true"></i>
           </button>
         </div>
-      </div>
+      </header>
 
       <div id="popup-alerts">
         <div id="update-available" class="alert alert-warning">
@@ -53,95 +58,131 @@
         </div>
       </div>
 
-      <div id="initial-state">
-        <div class="loader"></div> <p data-i18n="popupCheckingStatus"></p>
+      <div id="initial-state" class="status-card status-card--loading">
+        <div class="status-row">
+          <div class="loader"></div>
+          <div class="status-body"><p data-i18n="popupCheckingStatus"></p></div>
+        </div>
       </div>
 
-      <div id="not-configured">
-        <p data-i18n="popupNotConfigured"></p>
-        <div class="right-align">
-          <button id="connect-button" class="btn btn-sm btn-primary" data-i18n="[title]connectButtonTitle">
+      <section id="not-configured" class="status-card">
+        <div class="status-row">
+          <span class="status-badge status-badge--neutral"><i class="fa fa-link" aria-hidden="true"></i></span>
+          <div class="status-body">
+            <p data-i18n="popupNotConfigured"></p>
+          </div>
+        </div>
+        <div class="status-actions">
+          <button id="connect-button" class="btn btn-primary" data-i18n="[title]connectButtonTitle">
             <i class="fa fa-link" aria-hidden="true"></i>
             <span data-i18n="popupConnectButton"></span>
           </button>
         </div>
-      </div>
+      </section>
 
-      <div id="need-reconfigure">
-        <p data-i18n="popupNeedReconfigure"></p>
-        <p id="left-margin">
-          <code id="need-reconfigure-message"></code>
-        </p>
-        <p data-i18n="popupNeedReconfigureMessage"></p>
-        <div class="right-align">
-          <button id="reconnect-button" class="btn btn-sm btn-primary" data-i18n="[title]reconnectButtonTitle">
+      <section id="need-reconfigure" class="status-card">
+        <div class="status-row">
+          <span class="status-badge status-badge--warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+          <div class="status-body">
+            <p data-i18n="popupNeedReconfigure"></p>
+            <p class="detail"><code id="need-reconfigure-message"></code></p>
+            <p class="muted" data-i18n="popupNeedReconfigureMessage"></p>
+          </div>
+        </div>
+        <div class="status-actions">
+          <button id="reconnect-button" class="btn btn-primary" data-i18n="[title]reconnectButtonTitle">
             <i class="fa fa-refresh" aria-hidden="true"></i>
             <span data-i18n="popupReconnectButton"></span>
           </button>
         </div>
-      </div>
+      </section>
 
-      <div id="configured-not-associated">
-        <span data-i18n="popupConfiguredNotAssociated" data-i18n-placeholder="<span class='bg-warning' id='unassociated-identifier'></span>"></span>
-      </div>
+      <section id="configured-not-associated" class="status-card">
+        <div class="status-row">
+          <span class="status-badge status-badge--warning"><i class="fa fa-unlink" aria-hidden="true"></i></span>
+          <div class="status-body">
+            <p><span data-i18n="popupConfiguredNotAssociated" data-i18n-placeholder="<span class='identifier' id='unassociated-identifier'></span>"></span></p>
+          </div>
+        </div>
+      </section>
 
-      <div id="configured-and-associated">
-        <p data-i18n="popupConfiguredAndAssociated" data-i18n-placeholder="<span class='bg-success' id='associated-identifier'></span>"></p>
-        <div class="right-align">
-          <button id="redetect-fields-button" class="btn btn-sm btn-primary" data-i18n="[title]redetectButtonTitle">
-            <i class="fa fa-list-alt" aria-hidden="true"></i>
+      <section id="configured-and-associated" class="status-card">
+        <div class="status-row">
+          <span class="status-badge status-badge--success"><i class="fa fa-check" aria-hidden="true"></i></span>
+          <div class="status-body">
+            <p class="status-title" data-i18n="popupConnectedTitle"></p>
+            <p class="muted" data-i18n="popupConfiguredAndAssociated" data-i18n-placeholder="<span class='identifier' id='associated-identifier'></span>"></p>
+          </div>
+        </div>
+        <div class="status-actions">
+          <button id="redetect-fields-button" class="btn btn-primary" data-i18n="[title]redetectButtonTitle">
+            <i class="fa fa-search" aria-hidden="true"></i>
             <span data-i18n="popupRedetectButton"></span>
           </button>
         </div>
-      </div>
+      </section>
 
-      <div id="error-encountered">
-        <p data-i18n="popupErrorEncountered"></p>
-        <p id="left-margin">
-          <code id="error-message"></code>
-        </p>
-        <div class="right-align">
-          <button id="reload-status-button" class="btn btn-sm btn-primary" data-i18n="[title]reloadButtonTitle">
+      <section id="error-encountered" class="status-card">
+        <div class="status-row">
+          <span class="status-badge status-badge--danger"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
+          <div class="status-body">
+            <p data-i18n="popupErrorEncountered"></p>
+            <p class="detail"><code id="error-message"></code></p>
+          </div>
+        </div>
+        <div class="status-actions">
+          <button id="reload-status-button" class="btn btn-primary" data-i18n="[title]reloadButtonTitle">
             <i class="fa fa-refresh" aria-hidden="true"></i>
             <span data-i18n="popupReloadButton"></span>
           </button>
         </div>
-      </div>
+      </section>
 
-      <div id="database-not-opened">
-        <p data-i18n="popupErrorEncountered"></p>
-        <p id="left-margin">
-          <code id="database-error-message"></code>
-        </p>
-        <div class="right-align">
-          <button id="reopen-database-button" class="btn btn-sm btn-primary" data-i18n="[title]reopenDatabaseButtonTitle">
-            <i class="fa fa-lock" aria-hidden="true"></i>
+      <section id="database-not-opened" class="status-card">
+        <div class="status-row">
+          <span class="status-badge status-badge--locked"><i class="fa fa-lock" aria-hidden="true"></i></span>
+          <div class="status-body">
+            <p data-i18n="popupErrorEncountered"></p>
+            <p class="detail"><code id="database-error-message"></code></p>
+          </div>
+        </div>
+        <div class="status-actions">
+          <button id="reopen-database-button" class="btn btn-primary" data-i18n="[title]reopenDatabaseButtonTitle">
+            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
             <span data-i18n="popupReopenButton"></span>
           </button>
         </div>
-      </div>
+      </section>
 
-      <div id="username-field-detected">
-        <hr>
-        <p data-i18n="popupUsernameFieldDetected"></p>
-        <div class="right-align">
-          <button id="username-only-button" class="btn btn-sm btn-primary" data-i18n="[title]usernameButtonTitle">
+      <section id="username-field-detected" class="status-card">
+        <div class="status-row">
+          <span class="status-badge status-badge--neutral"><i class="fa fa-user" aria-hidden="true"></i></span>
+          <div class="status-body">
+            <p data-i18n="popupUsernameFieldDetected"></p>
+          </div>
+        </div>
+        <div class="status-actions">
+          <button id="username-only-button" class="btn btn-primary" data-i18n="[title]usernameButtonTitle">
             <i class="fa fa-plus" aria-hidden="true"></i>
             <span data-i18n="popupUsernameButton"></span>
           </button>
         </div>
-      </div>
+      </section>
 
-      <div id="iframe-detected" style="display: none">
-        <hr>
-        <p data-i18n="popupIframeDetected"></p>
-        <div class="right-align">
-          <button id="allow-iframe-button" class="btn btn-sm btn-primary" data-i18n="[title]allowIframeButtonTitle">
+      <section id="iframe-detected" class="status-card" style="display: none">
+        <div class="status-row">
+          <span class="status-badge status-badge--neutral"><i class="fa fa-window-maximize" aria-hidden="true"></i></span>
+          <div class="status-body">
+            <p data-i18n="popupIframeDetected"></p>
+          </div>
+        </div>
+        <div class="status-actions">
+          <button id="allow-iframe-button" class="btn btn-primary" data-i18n="[title]allowIframeButtonTitle">
             <i class="fa fa-plus" aria-hidden="true"></i>
             <span data-i18n="popupAllowIframeButton"></span>
           </button>
         </div>
-      </div>
+      </section>
     </div>
   </body>
 </html>

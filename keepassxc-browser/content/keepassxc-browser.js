@@ -468,7 +468,7 @@ kpxc.initLoginPopup = function() {
 
     // Initialize Popup Login and Autocomplete Menu items
     for (const l of loginItems) {
-        popupLoginItems.push({ text: l.text, uuid: l.uuid });
+        popupLoginItems.push({ text: l.text, uuid: l.uuid, title: l.title, login: l.visibleLogin });
 
         kpxcUserAutocomplete.elements.push({
             group: showGroupNameInAutocomplete ? l.group : undefined,

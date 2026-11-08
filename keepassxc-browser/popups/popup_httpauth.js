@@ -9,17 +9,15 @@
     const ll = document.getElementById('login-list');
 
     for (const [ i, login ] of basicAuthLogins.loginList.entries()) {
-        const a = document.createElement('a');
-        a.setAttribute('class', 'list-group-item');
-        a.textContent = login.login + ' (' + login.name + ')';
-        a.setAttribute('id', '' + i);
+        const a = createLoginRow(i, login.name || login.login, login.login, login.login + ' (' + login.name + ')');
 
         a.addEventListener('click', (e) => {
             if (!e.isTrusted) {
                 return;
             }
 
-            const credentials = basicAuthLogins.loginList[Number(e.target.id)];
+            e.preventDefault();
+            const credentials = basicAuthLogins.loginList[Number(e.currentTarget.id)];
             browser.runtime.sendMessage({
                 action: 'fill_http_auth',
                 args: credentials

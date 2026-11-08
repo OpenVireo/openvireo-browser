@@ -56,6 +56,8 @@ export default defineConfig([globalIgnores(["**/*.min.js"]), {
             EXTENSION_NAME: "readonly",
             getCurrentTab: "readonly",
             getIconClass: "readonly",
+            createLoginRow: "readonly",
+            filterLoginRows: "readonly",
             getLoginData: "readonly",
             getTopLevelDomainFromUrl: "readonly",
             GRAY_BUTTON_CLASS: "readonly",

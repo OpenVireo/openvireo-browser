@@ -1,120 +1,425 @@
+/* Toolbar popup. Tokens come from ../css/theme.css. */
+
+html,
 body {
-    background-color: var(--kpxc-background-color) !important;
-    color: var(--kpxc-text-color) !important;
-    display: flex;
-    font-family: sans-serif;
-    font-size: 14px !important;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    width: 460px;
+    background: var(--ov-bg) !important;
+    color: var(--ov-text) !important;
 }
 
-code {
-    color: var(--bs-danger) !important;
-    font-size: 14px !important;
+body {
+    font-size: 13px !important;
+    line-height: 1.45;
+    margin: 0;
+    width: 380px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    max-width: 460px;
+    gap: 10px;
+    max-width: 380px;
+    padding: 0 0 12px;
 }
 
-.loader {
-    animation: spin 2s linear infinite;
-    border: 4px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 4px solid #28a745;
-    float: left;
-    height: 1.4em;
-    margin-right: 1em;
-    width: 1.4em;
+p {
+    margin: 0;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+p + p {
+    margin-top: 6px;
 }
 
-.list-group {
-    font-size: .9em !important;
-    margin-bottom: 1rem !important;
+hr {
+    display: none;
 }
 
-.list-group-item {
-    padding: 5px 10px !important;
-}
-
-.list-group-item+.list-group-item:first-child {
-    border-top-width: 1px !important;
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
-}
-
-.list-group-item:hover {
-    cursor: pointer
-}
+/* ---------- Header ---------- */
 
 .settings {
+    align-items: center;
+    background: var(--ov-bg);
+    border-bottom: 1px solid var(--ov-border);
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid rgb(203, 207, 203, 0.25);
-    font-size: 90%;
-    text-align: left;
+    padding: 10px 10px 10px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
-.settings label {
-    display: block;
+.brand {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    min-width: 0;
 }
 
-.settings label input {
-    vertical-align: middle;
+.brand-logo {
+    border-radius: 6px;
+    height: 24px;
+    width: 24px;
 }
 
-.settings .description {
-    margin-top: 3px;
-    font-size: 80%;
-    color: #787878;
-}
-
-.small {
-    margin-top: 3px;
-    margin-left: 12px;
-    font-size: 80%;
-    color: #787878;
+.brand-name {
+    font-size: 14px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
 }
 
 .action-buttons-area {
+    align-items: center;
     display: flex;
-    justify-content: flex-start;
-    gap: 6px;
+    gap: 2px;
 }
 
-.lock-button-area {
-    display: flex;
-    justify-content: flex-end;
+.icon-btn {
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 0;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    color: var(--ov-text-2) !important;
+    font-size: 15px;
+    height: 32px;
+    width: 32px;
 }
 
-#list {
-    padding-left: 0px;
+.icon-btn:hover,
+.icon-btn:focus-visible {
+    background: var(--ov-surface-2) !important;
+    color: var(--ov-text) !important;
 }
 
-#login-list {
-    overflow-y: auto;
-    max-height: 380px;
+.icon-btn:focus-visible {
+    box-shadow: var(--ov-focus) !important;
 }
 
-#child {
-    border-top: 0px;
+#lock-database-button {
+    display: none;
+}
+
+/* popup.js shows it with display:block; keep the icon centred. */
+#lock-database-button[style*="block"] {
+    display: inline-flex !important;
+}
+
+#lock-database-button:hover {
+    background: var(--ov-danger-soft) !important;
+    color: var(--ov-danger) !important;
+}
+
+/* The old background-image icon is replaced by a font icon. */
+#choose-custom-login-fields-button,
+#choose-custom-login-fields-button-moz,
+#choose-custom-login-fields-button-safari {
+    background-image: none !important;
+}
+
+/* ---------- Body spacing ---------- */
+
+.container > :not(.settings) {
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 #popup-alerts {
-    margin-top: 10px;
-    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
+
+/* Collapse the alerts wrapper unless popup.js has shown one of its alerts. */
+#popup-alerts:not(:has(> [style*="block"])) {
+    display: none;
+}
+
+.alert {
+    margin: 0;
+    padding: 10px 12px;
+}
+
+.alert-dismissible {
+    padding-right: 36px;
+}
+
+.alert-dismissible .btn-close {
+    background-size: 0.6em;
+    padding: 12px;
+}
+
+/* ---------- Status cards ---------- */
+
+.status-card {
+    background: var(--ov-surface);
+    border: 1px solid var(--ov-border);
+    border-radius: var(--ov-radius);
+    padding: 14px;
+}
+
+.status-row {
+    align-items: flex-start;
+    display: flex;
+    gap: 12px;
+}
+
+.status-body {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.status-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status-title + .muted {
+    margin-top: 2px;
+}
+
+.muted {
+    color: var(--ov-text-2);
+}
+
+.status-badge {
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 14px;
+    height: 32px;
+    justify-content: center;
+    width: 32px;
+}
+
+.status-badge--success {
+    background: var(--ov-accent-soft);
+    color: var(--ov-accent);
+}
+
+.status-badge--warning {
+    background: var(--ov-warning-soft);
+    color: var(--ov-warning);
+}
+
+.status-badge--danger {
+    background: var(--ov-danger-soft);
+    color: var(--ov-danger);
+}
+
+.status-badge--locked,
+.status-badge--neutral {
+    background: var(--ov-surface-2);
+    color: var(--ov-text-2);
+}
+
+.status-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.status-actions .btn {
+    --bs-btn-padding-y: 0.4rem;
+    --bs-btn-padding-x: 0.9rem;
+    --bs-btn-font-size: 0.8125rem;
+}
+
+/* Secondary prompts (username-only, iframe) read as quieter cards. */
+#username-field-detected,
+#iframe-detected {
+    background: transparent;
+}
+
+#username-field-detected .btn-primary,
+#iframe-detected .btn-primary {
+    --bs-btn-color: var(--ov-text) !important;
+    --bs-btn-bg: var(--ov-elevated) !important;
+    --bs-btn-border-color: var(--ov-border-strong) !important;
+    --bs-btn-hover-color: var(--ov-text) !important;
+    --bs-btn-hover-bg: var(--ov-surface-2) !important;
+    --bs-btn-hover-border-color: var(--ov-border-strong) !important;
+}
+
+.identifier {
+    background: var(--ov-surface-2);
+    border-radius: 4px;
+    color: var(--ov-text);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.92em;
+    padding: 1px 5px;
+}
+
+.detail {
+    margin-top: 6px;
+}
+
+.detail code {
+    display: inline-block;
+    max-width: 100%;
+    white-space: normal;
+}
+
+.loader {
+    animation: spin .8s linear infinite;
+    border: 2.5px solid var(--ov-border);
+    border-radius: 50%;
+    border-top-color: var(--ov-accent);
+    flex-shrink: 0;
+    height: 20px;
+    margin: 1px 2px 0;
+    width: 20px;
+}
+
+.status-card--loading .status-row {
+    align-items: center;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ---------- Credential picker ---------- */
+
+.credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.section-label {
+    color: var(--ov-text-2);
+    font-size: 12px;
+    padding: 0 2px;
+}
+
+.search-field {
+    position: relative;
+}
+
+.search-field .fa-search {
+    color: var(--ov-text-3);
+    font-size: 13px;
+    left: 11px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#login-filter {
+    background: var(--ov-surface) !important;
+    border: 1px solid var(--ov-border) !important;
+    border-radius: 8px;
+    font-size: 13px;
+    height: 36px;
+    padding: 0 12px 0 32px;
+    width: 100%;
+}
+
+#login-filter:focus {
+    background: var(--ov-bg) !important;
+}
+
+#login-list {
+    background: transparent;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0 -4px;
+    max-height: 380px;
+    overflow-y: auto;
+    padding: 0 4px;
+}
+
+.login-row,
+#login-list .list-group-item {
+    align-items: center;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    color: var(--ov-text) !important;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    margin: 0 !important;
+    padding: 8px !important;
+    text-decoration: none;
+}
+
+.login-row:hover,
+.login-row:focus-visible {
+    background: var(--ov-surface-2) !important;
+    outline: none;
+}
+
+.login-row:focus-visible {
+    box-shadow: var(--ov-focus);
+}
+
+.login-avatar {
+    --avatar-hue: 110;
+    align-items: center;
+    background: hsl(var(--avatar-hue) 55% 92%);
+    border-radius: 8px;
+    color: hsl(var(--avatar-hue) 50% 30%);
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 650;
+    height: 32px;
+    justify-content: center;
+    width: 32px;
+}
+
+[data-bs-theme='dark'] .login-avatar {
+    background: hsl(var(--avatar-hue) 30% 22%);
+    color: hsl(var(--avatar-hue) 60% 78%);
+}
+
+.login-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.login-title,
+.login-subtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.login-title {
+    font-weight: 550;
+}
+
+.login-subtitle {
+    color: var(--ov-text-2);
+    font-size: 12px;
+}
+
+.login-chevron {
+    color: var(--ov-text-3);
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity .12s ease;
+}
+
+.login-row:hover .login-chevron,
+.login-row:focus-visible .login-chevron {
+    opacity: 1;
+}
+
+#btn-dismiss {
+    --bs-btn-padding-y: 0.4rem;
+    --bs-btn-padding-x: 0.9rem;
+}
+
+/* ---------- Visibility (toggled from popup.js) ---------- */
 
 #filter-block,
 #not-configured,
@@ -128,89 +433,4 @@ code {
 #getting-started-guide,
 #troubleshooting-guide {
     display: none;
-}
-
-#options-button {
-    height: 31px;
-    width: 2.5rem;
-}
-
-#choose-custom-login-fields-button {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/icons/custom_login_fields.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 70%;
-    height: 31px;
-    width: 2.5rem;
-}
-
-#choose-custom-login-fields-button-moz {
-    background-image: url('moz-extension://__MSG_@@extension_id__/icons/custom_login_fields.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 70%;
-    height: 31px;
-    width: 2.5rem;
-}
-
-#choose-custom-login-fields-button-safari {
-    background-image: url('safari-web-extension://__MSG_@@extension_id__/icons/custom_login_fields.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 70%;
-    height: 31px;
-    width: 2.5rem;
-}
-
-#lock-database-button {
-    display: none;
-    width: 2.5rem;
-}
-
-#login-filter {
-    outline: none;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    margin-bottom: 5px;
-    padding: 2px 10px;
-    width: 100%;
-}
-
-.right-align {
-    text-align: right;
-}
-
-#left-margin {
-    margin-left: 1em;
-}
-
-@media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
-    body {
-        background: var(--kpxc-background-color) !important;
-        color: var(--kpxc-text-color) !important;
-    }
-
-    input, input[type="checkbox"] {
-        background-color: var(--kpxc-input-background-color) !important;
-        border: var(--kpxc-input-border);
-        border-color: var(--kpxc-input-border-color);
-    }
-
-    .list-group-item {
-        background-color: var(--kpxc-input-background-color) !important;
-        color: var(--kpxc-text-color) !important;
-    }
-
-    .list-group-item:hover {
-        background-color: var(--kpxc-table-hover-color) !important;
-    }
-
-    span.bg-success {
-        background-color: var(--kpxc-table-hover-color) !important;
-        color: var(--kpxc-text-color) !important;
-    }
-
-    #login-filter {
-        color: var(--kpxc-text-color) !important;
-    }
 }

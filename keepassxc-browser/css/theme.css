@@ -1,0 +1,353 @@
+/*
+ * OpenVireo extension-page theme (popup, options, getting started, shortcuts).
+ * Loaded AFTER bootstrap so it can retune Bootstrap's variables. Content scripts
+ * do not load this file; they use the --kpxc-* tokens in colors.css.
+ *
+ * The look follows modern password-manager UI: neutral surfaces, soft borders,
+ * generous radii, quiet icon buttons and one accent colour (--ov-accent).
+ */
+
+:root,
+[data-bs-theme='light'] {
+    --ov-accent: #3e7827;
+    --ov-accent-hover: #346a20;
+    --ov-accent-soft: rgba(62, 120, 39, 0.1);
+    --ov-accent-text: #ffffff;
+    --ov-bg: #ffffff;
+    --ov-surface: #f6f7f9;
+    --ov-surface-2: #eef0f3;
+    --ov-elevated: #ffffff;
+    --ov-border: #e4e6ea;
+    --ov-border-strong: #d3d6dc;
+    --ov-text: #1b1d21;
+    --ov-text-2: #5c6270;
+    --ov-text-3: #8a909c;
+    --ov-danger: #d93a3a;
+    --ov-danger-soft: rgba(217, 58, 58, 0.1);
+    --ov-warning: #b7791f;
+    --ov-warning-soft: rgba(214, 158, 46, 0.14);
+    --ov-info-soft: rgba(37, 99, 235, 0.08);
+    --ov-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+    --ov-shadow: 0 1px 3px rgba(16, 24, 40, 0.06), 0 1px 2px rgba(16, 24, 40, 0.04);
+    --ov-shadow-lg: 0 12px 32px -8px rgba(16, 24, 40, 0.18);
+    --ov-focus: 0 0 0 3px rgba(62, 120, 39, 0.25);
+    --bs-link-color-rgb: 62, 120, 39;
+    --ov-radius-sm: 6px;
+    --ov-radius: 10px;
+    --ov-radius-lg: 14px;
+    --ov-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI Variable', 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-bs-theme='light']) {
+        --ov-accent: #6ab536;
+        --ov-accent-hover: #7cc847;
+        --ov-accent-soft: rgba(106, 181, 54, 0.14);
+        --ov-accent-text: #0f1a09;
+        --ov-bg: #1a1b1f;
+        --ov-surface: #222328;
+        --ov-surface-2: #2b2c32;
+        --ov-elevated: #26272c;
+        --ov-border: #33353b;
+        --ov-border-strong: #42444b;
+        --ov-text: #ececef;
+        --ov-text-2: #a3a7b1;
+        --ov-text-3: #767b86;
+        --ov-danger: #f0605d;
+        --ov-danger-soft: rgba(240, 96, 93, 0.14);
+        --ov-warning: #e5b454;
+        --ov-warning-soft: rgba(229, 180, 84, 0.14);
+        --ov-info-soft: rgba(96, 145, 255, 0.12);
+        --ov-shadow-sm: none;
+        --ov-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+        --ov-shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.6);
+        --ov-focus: 0 0 0 3px rgba(106, 181, 54, 0.3);
+        --bs-link-color-rgb: 106, 181, 54;
+    }
+}
+
+[data-bs-theme='dark'] {
+    --ov-accent: #6ab536;
+    --ov-accent-hover: #7cc847;
+    --ov-accent-soft: rgba(106, 181, 54, 0.14);
+    --ov-accent-text: #0f1a09;
+    --ov-bg: #1a1b1f;
+    --ov-surface: #222328;
+    --ov-surface-2: #2b2c32;
+    --ov-elevated: #26272c;
+    --ov-border: #33353b;
+    --ov-border-strong: #42444b;
+    --ov-text: #ececef;
+    --ov-text-2: #a3a7b1;
+    --ov-text-3: #767b86;
+    --ov-danger: #f0605d;
+    --ov-danger-soft: rgba(240, 96, 93, 0.14);
+    --ov-warning: #e5b454;
+    --ov-warning-soft: rgba(229, 180, 84, 0.14);
+    --ov-info-soft: rgba(96, 145, 255, 0.12);
+    --ov-shadow-sm: none;
+    --ov-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+    --ov-shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.6);
+    --ov-focus: 0 0 0 3px rgba(106, 181, 54, 0.3);
+    --bs-link-color-rgb: 106, 181, 54;
+}
+
+/* Map the old tokens onto the new palette so existing page CSS follows along. */
+:root,
+[data-bs-theme] {
+    --kpxc-background-color: var(--ov-bg);
+    --kpxc-card-background-color: var(--ov-elevated);
+    --kpxc-card-border-color: var(--ov-border);
+    --kpxc-card-header-color: var(--ov-elevated);
+    --kpxc-input-background-color: var(--ov-bg);
+    --kpxc-input-main-border-color: var(--ov-border-strong);
+    --kpxc-link-color: var(--ov-accent);
+    --kpxc-link-hover-color: var(--ov-accent-hover);
+    --kpxc-sidebar-background-color: var(--ov-surface);
+    --kpxc-table-border-color: var(--ov-border);
+    --kpxc-table-hover-color: var(--ov-surface-2);
+    --kpxc-table-odd-color: var(--ov-surface);
+    --kpxc-text-color: var(--ov-text);
+    --kpxc-lighter-text-color: var(--ov-text-2);
+    --kpxc-light-text-color: var(--ov-text-3);
+    --kpxc-checkbox-color: var(--ov-accent);
+    --kpxc-checkbox-background-color: var(--ov-accent);
+
+    --bs-body-font-family: var(--ov-font);
+    --bs-body-bg: var(--ov-bg);
+    --bs-body-color: var(--ov-text);
+    --bs-secondary-color: var(--ov-text-2);
+    --bs-border-color: var(--ov-border);
+    --bs-border-radius: var(--ov-radius-sm);
+    --bs-border-radius-sm: var(--ov-radius-sm);
+    --bs-border-radius-lg: var(--ov-radius);
+    --bs-link-color: var(--ov-accent);
+    --bs-link-hover-color: var(--ov-accent-hover);
+    --bs-primary: var(--ov-accent);
+    --bs-focus-ring-color: var(--ov-accent-soft);
+    --bs-table-bg: transparent;
+}
+
+html,
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--ov-font) !important;
+}
+
+::selection {
+    background: var(--ov-accent-soft);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    --bs-btn-font-weight: 500;
+    --bs-btn-border-radius: var(--ov-radius-sm);
+    --bs-btn-focus-box-shadow: var(--ov-focus);
+    align-items: center;
+    display: inline-flex;
+    gap: 6px;
+    justify-content: center;
+    letter-spacing: -0.005em;
+    transition: background-color .12s ease, border-color .12s ease, color .12s ease, box-shadow .12s ease;
+}
+
+.btn-sm {
+    --bs-btn-padding-y: 0.3rem;
+    --bs-btn-padding-x: 0.75rem;
+    --bs-btn-font-size: 0.8125rem;
+    --bs-btn-border-radius: var(--ov-radius-sm);
+}
+
+.btn .fa {
+    margin-right: 0 !important;
+}
+
+.btn-primary,
+.btn-success {
+    --bs-btn-color: var(--ov-accent-text) !important;
+    --bs-btn-bg: var(--ov-accent) !important;
+    --bs-btn-border-color: var(--ov-accent) !important;
+    --bs-btn-hover-color: var(--ov-accent-text) !important;
+    --bs-btn-hover-bg: var(--ov-accent-hover) !important;
+    --bs-btn-hover-border-color: var(--ov-accent-hover) !important;
+    --bs-btn-active-color: var(--ov-accent-text) !important;
+    --bs-btn-active-bg: var(--ov-accent-hover) !important;
+    --bs-btn-active-border-color: var(--ov-accent-hover) !important;
+    --bs-btn-disabled-bg: var(--ov-accent) !important;
+    --bs-btn-disabled-border-color: var(--ov-accent) !important;
+    box-shadow: var(--ov-shadow-sm);
+}
+
+.btn-success:hover {
+    filter: none !important;
+}
+
+.btn-secondary,
+.btn-warning,
+.btn-light,
+.btn-outline-secondary,
+.btn-outline-primary {
+    --bs-btn-color: var(--ov-text) !important;
+    --bs-btn-bg: var(--ov-elevated) !important;
+    --bs-btn-border-color: var(--ov-border-strong) !important;
+    --bs-btn-hover-color: var(--ov-text) !important;
+    --bs-btn-hover-bg: var(--ov-surface-2) !important;
+    --bs-btn-hover-border-color: var(--ov-border-strong) !important;
+    --bs-btn-active-color: var(--ov-text) !important;
+    --bs-btn-active-bg: var(--ov-surface-2) !important;
+    --bs-btn-active-border-color: var(--ov-border-strong) !important;
+    box-shadow: var(--ov-shadow-sm);
+}
+
+.btn-danger,
+.btn-outline-danger {
+    --bs-btn-color: var(--ov-danger) !important;
+    --bs-btn-bg: var(--ov-elevated) !important;
+    --bs-btn-border-color: var(--ov-border-strong) !important;
+    --bs-btn-hover-color: #ffffff !important;
+    --bs-btn-hover-bg: var(--ov-danger) !important;
+    --bs-btn-hover-border-color: var(--ov-danger) !important;
+    --bs-btn-active-color: #ffffff !important;
+    --bs-btn-active-bg: var(--ov-danger) !important;
+    --bs-btn-active-border-color: var(--ov-danger) !important;
+    box-shadow: var(--ov-shadow-sm);
+}
+
+/* ---------- Form controls ---------- */
+
+.form-control,
+.form-select,
+input[type="text"],
+input[type="url"],
+input[type="number"],
+input[type="search"] {
+    background-color: var(--ov-bg) !important;
+    border: 1px solid var(--ov-border-strong) !important;
+    border-radius: var(--ov-radius-sm);
+    color: var(--ov-text) !important;
+    transition: border-color .12s ease, box-shadow .12s ease;
+}
+
+.form-control:focus,
+.form-select:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus {
+    border-color: var(--ov-accent) !important;
+    box-shadow: var(--ov-focus) !important;
+    outline: none;
+}
+
+.form-check-input {
+    border-color: var(--ov-border-strong);
+}
+
+.form-check-input:focus {
+    border-color: var(--ov-accent);
+    box-shadow: var(--ov-focus);
+}
+
+.form-check-input:checked,
+.form-switch > .form-check-input:checked,
+.table-striped > tbody > tr:nth-of-type(odd) .form-check-input:checked {
+    background-color: var(--ov-accent) !important;
+    border-color: var(--ov-accent) !important;
+}
+
+.form-switch .form-check-input {
+    cursor: pointer;
+    height: 1.15em;
+    width: 2.05em;
+}
+
+.form-check-label {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.form-text {
+    color: var(--ov-text-2);
+    font-size: 0.8125rem;
+}
+
+input[type="range"] {
+    accent-color: var(--ov-accent);
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+    background-color: var(--ov-accent) !important;
+}
+
+/* ---------- Alerts ---------- */
+
+.alert {
+    --bs-alert-border-radius: var(--ov-radius);
+    border: 1px solid transparent;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+}
+
+.alert-info,
+.alert-primary {
+    --bs-alert-bg: var(--ov-info-soft);
+    --bs-alert-color: var(--ov-text);
+    --bs-alert-border-color: transparent;
+    --bs-alert-link-color: var(--ov-accent);
+}
+
+.alert-warning {
+    --bs-alert-bg: var(--ov-warning-soft);
+    --bs-alert-color: var(--ov-text);
+    --bs-alert-border-color: transparent;
+    --bs-alert-link-color: var(--ov-text);
+}
+
+.alert-danger {
+    --bs-alert-bg: var(--ov-danger-soft);
+    --bs-alert-color: var(--ov-text);
+    --bs-alert-border-color: transparent;
+    --bs-alert-link-color: var(--ov-danger);
+}
+
+.alert-secondary {
+    --bs-alert-bg: var(--ov-surface);
+    --bs-alert-color: var(--ov-text-2);
+    --bs-alert-border-color: var(--ov-border);
+}
+
+.alert-success {
+    --bs-alert-bg: var(--ov-accent-soft);
+    --bs-alert-color: var(--ov-text);
+    --bs-alert-border-color: transparent;
+}
+
+.alert .fa {
+    margin-right: 0.35rem;
+}
+
+code {
+    background: var(--ov-surface-2);
+    border-radius: 4px;
+    color: var(--ov-text) !important;
+    font-size: 0.8em !important;
+    padding: 0.1em 0.35em;
+}
+
+kbd {
+    background: var(--ov-surface-2);
+    border: 1px solid var(--ov-border-strong);
+    border-radius: 4px;
+    box-shadow: inset 0 -1px 0 var(--ov-border-strong);
+    color: var(--ov-text);
+}
+
+/* ---------- Scrollbars ---------- */
+
+* {
+    scrollbar-color: var(--ov-border-strong) transparent;
+    scrollbar-width: thin;
+}

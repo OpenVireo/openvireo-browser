@@ -3,10 +3,11 @@
   <head>
     <title data-i18n="popupTitle"></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/colors.css">
-    <link rel="stylesheet" href="popup.css">
     <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../fonts/fork-awesome.min.css">
+    <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="popup.css">
     <script src="../common/browser-polyfill.min.js"></script>
     <script src="../common/global.js"></script>
     <script src="../common/global_ui.js"></script>
@@ -17,19 +18,23 @@
   </head>
   <body>
     <div class="container">
-      <div id="settings" class="settings">
-        <div class="function-buttons-area">
-          <button id="options-button" class="btn btn-sm btn-success" data-i18n="[title]popupSettingsText">
+      <header id="settings" class="settings">
+        <div class="brand">
+          <img class="brand-logo" src="../icons/keepassxc.svg" alt="">
+          <span class="brand-name">OpenVireo</span>
+        </div>
+        <div class="action-buttons-area">
+          <button id="choose-custom-login-fields-button" class="btn icon-btn" data-i18n="[title]popupChooseCredentialsText">
+            <i class="fa fa-crosshairs" aria-hidden="true"></i>
+          </button>
+          <button id="options-button" class="btn icon-btn" data-i18n="[title]popupSettingsText">
             <i class="fa fa-cog" aria-hidden="true"></i>
           </button>
-          <button id="choose-custom-login-fields-button" class="btn btn-sm btn-warning" data-i18n="[title]popupChooseCredentialsText"></button>
-        </div>
-        <div class="lock-button-area">
-          <button id="lock-database-button" class="btn btn-sm btn-danger" data-i18n="[title]lockDatabase">
+          <button id="lock-database-button" class="btn icon-btn" data-i18n="[title]lockDatabase">
             <i class="fa fa-lock" aria-hidden="true"></i>
           </button>
         </div>
-      </div>
+      </header>
 
       <div id="update-available" class="alert alert-warning">
         <span data-i18n="popupUpdateAvailable"></span>
@@ -38,21 +43,22 @@
       </div>
 
       <div id="credentialsList" class="credentials">
-        <p data-i18n="popupLoginText"></p>
-        <div id="filter-block">
-          <label for="login-filter" data-i18n="popupFilterText"></label>
-          <input type="text" id="login-filter">
+        <div id="filter-block" class="search-field">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <label for="login-filter" class="visually-hidden" data-i18n="popupFilterText"></label>
+          <input type="search" id="login-filter" autocomplete="off" spellcheck="false" data-i18n="[placeholder]popupLoginSearchPlaceholder">
         </div>
+        <p class="section-label" data-i18n="popupLoginText"></p>
         <div id="login-list" class="list-group"></div>
       </div>
 
-       <div id="database-not-opened">
+      <div id="database-not-opened" class="status-card">
         <p data-i18n="popupErrorEncountered"></p>
-        <p style="margin-left: 1em">
+        <p class="detail">
           <code id="database-error-message"></code>
         </p>
-        <div class="right-align">
-          <button id="reopen-database-button" class="btn btn-sm btn-primary" data-i18n="[title]reopenDatabaseButtonTitle">
+        <div class="status-actions">
+          <button id="reopen-database-button" class="btn btn-primary" data-i18n="[title]reopenDatabaseButtonTitle">
             <i class="fa fa-lock" aria-hidden="true"></i>
             <span data-i18n="popupReopenButton"></span>
           </button>

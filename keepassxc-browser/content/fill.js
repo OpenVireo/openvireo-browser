@@ -90,7 +90,12 @@ kpxcFill.fillFromAutofill = async function() {
 
     // Generate popup-list of usernames + descriptions
     sendMessage('popup_login', [
-        { text: `${kpxc.credentials[0].login} (${kpxc.credentials[0].name})`, uuid: kpxc.credentials[0].uuid },
+        {
+            text: `${kpxc.credentials[0].login} (${kpxc.credentials[0].name})`,
+            uuid: kpxc.credentials[0].uuid,
+            title: kpxc.credentials[0].name,
+            login: kpxc.credentials[0].login
+        },
     ]);
 };
 
