@@ -26,7 +26,7 @@ const setVersion = async (manifest, version) => {
     if (Object.hasOwn(data, 'version_name')) {
         data['version_name'] = version;
     }
-    fs.writeFile(manifest, JSON.stringify(data, null, 4));
+    await fs.writeFile(manifest, JSON.stringify(data, null, 4) + '\n');
 };
 
 const getDestinationFilename = async (manifest, version) => {
@@ -57,7 +57,7 @@ const createZipFile = async (fileName, path) => {
         console.log(`OpenVireo Browser: Creating extension package for ${browser}`);
 
         const fileName = await getDestinationFilename(BROWSERS[browser], version);
-        setVersion(`./dist/${BROWSERS[browser]}`, version);
+        await setVersion(`./dist/${BROWSERS[browser]}`, version);
         await fs.copyFile(`./dist/${BROWSERS[browser]}`, `${DEST}/manifest.json`);
 
         if (await fs.exists(fileName)) {
