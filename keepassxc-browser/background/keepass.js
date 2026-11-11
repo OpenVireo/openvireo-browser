@@ -23,6 +23,8 @@ keepass.keyPair = { publicKey: null, secretKey: null };
 keepass.latestVersionUrl = 'https://api.github.com/repos/openvireo/openvireo/releases/latest';
 keepass.previousDatabaseHash = '';
 keepass.reconnectLoop = null;
+// Checked against the KeePassXC release the app is based on ("version"). Every OpenVireo release (0.9.0, the first
+// beta, onward) is based on a newer one, so the options page shows users 0.9.0 as the minimum, not this.
 keepass.requiredKeePassXC = '2.6.0';
 keepass.serverPublicKey = '';
 

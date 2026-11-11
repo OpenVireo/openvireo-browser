@@ -378,7 +378,10 @@ options.showKeePassXCVersions = async function(response) {
         $('#tab-general-settings #versionRequiredAlert').hide();
     } else {
         $('#tab-general-settings #showGroupNameInAutocomplete').disabled = true;
-        $('#tab-general-settings #minimumVersionAlert').show();
+        // Without a connection the features list is all false, so only warn about a version we actually got
+        if (response.current !== 'unknown') {
+            $('#tab-general-settings #minimumVersionAlert').show();
+        }
     }
 
     if (!featureList?.downloadFaviconAfterSave) {
