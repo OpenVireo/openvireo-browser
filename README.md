@@ -48,6 +48,8 @@ Check [keepassxc-protocol](keepassxc-protocol.md) for the details about the mess
 
 The translations come from the upstream KeePassXC-Browser project on [Transifex](https://explore.transifex.com/keepassxc/keepassxc-browser/), rebranded for OpenVireo. Build with `npm run build -- --skip-translations`: a plain `npm run build` runs `tx pull`, which would overwrite the rebranded strings with upstream ones.
 
+The store packages leave out the manifest's `key`, which only pins the extension ID for unpacked builds. For the first Chrome Web Store upload of an item, add `--key-pem <path to the extension's private key>`: the store then takes the ID from that `key.pem` at the zip root, and it stays `bafnojkbdaiajjkkaeljcngflakgdmmk`, the ID the desktop app's native messaging host allows. Later uploads don't need it.
+
 ## Contributing
 
 You may directly contribute your own code by submitting a pull request. Please read the [CONTRIBUTING](.github/CONTRIBUTING.md) document for further information.
