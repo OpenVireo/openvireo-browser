@@ -6,7 +6,7 @@ OpenVireo Browser is a fork of [KeePassXC-Browser](https://github.com/keepassxre
 
 ## Download and use
 
-Use it with the latest OpenVireo desktop release. Store listings for Firefox, Chrome/Chromium and Microsoft Edge are not published yet; until then, load the extension unpacked (see [Development and testing](#development-and-testing)).
+Install it from [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/openvireo/) (Firefox, Tor Browser) or the [Chrome Web Store](https://chromewebstore.google.com/detail/ogecgkbokcjipobddojjhapbfcppghcf) (Chrome, Chromium, Microsoft Edge, Brave, Vivaldi), and use it with the latest OpenVireo desktop release. To run a development build, load the extension unpacked (see [Development and testing](#development-and-testing)).
 
 Please see this [document](https://openvireo.com/docs/OpenVireo_GettingStarted.html#_browser_integration) for instructions how to configure OpenVireo in order to connect the database correctly.
 
@@ -48,7 +48,12 @@ Check [keepassxc-protocol](keepassxc-protocol.md) for the details about the mess
 
 The translations come from the upstream KeePassXC-Browser project on [Transifex](https://explore.transifex.com/keepassxc/keepassxc-browser/), rebranded for OpenVireo. Build with `npm run build -- --skip-translations`: a plain `npm run build` runs `tx pull`, which would overwrite the rebranded strings with upstream ones.
 
-The store packages leave out the manifest's `key`, which only pins the extension ID for unpacked builds. For the first Chrome Web Store upload of an item, add `--key-pem <path to the extension's private key>`: the store then takes the ID from that `key.pem` at the zip root, and it stays `bafnojkbdaiajjkkaeljcngflakgdmmk`, the ID the desktop app's native messaging host allows. Later uploads don't need it.
+The store packages leave out the manifest's `key`, which only pins the extension ID for unpacked builds. There are two Chromium extension IDs, and the desktop app's native messaging host allows both:
+
+- `ogecgkbokcjipobddojjhapbfcppghcf`: the Chrome Web Store item, which Chrome, Chromium, Edge, Brave and Vivaldi install. The store assigned it, so it can't change.
+- `bafnojkbdaiajjkkaeljcngflakgdmmk`: unpacked builds, pinned by the manifest's `key`.
+
+A new Chromium extension ID only connects once the desktop app's `ALLOWED_ORIGINS` (`src/browser/NativeMessageInstaller.cpp`), the Snap helper and the Flatpak wrapper list it.
 
 ## Contributing
 
