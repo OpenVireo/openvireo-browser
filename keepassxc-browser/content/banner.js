@@ -65,25 +65,30 @@ kpxcBanner.create = async function(credentials = {}) {
     const className = getIconClass('kpxc-banner-icon');
     const icon = kpxcUI.createElement('span', className, { 'alt': 'logo' });
 
+    const bannerText = kpxcUI.createElement('div', 'banner-text');
     const infoText = kpxcUI.createElement('span', 'banner-info-text', {}, tr('rememberInfoText'));
-    const usernameText = kpxcUI.createElement('span', 'small', {}, tr('popupUsername') + ' ');
+    const subline = kpxcUI.createElement('div', 'banner-subline');
+    const usernameText = kpxcUI.createElement('span', 'small', {}, tr('popupUsername'));
     const usernameSpan = kpxcUI.createElement('span', 'small info information-username', {}, credentials.username);
+    subline.appendMultiple(usernameText, usernameSpan);
+    bannerText.appendMultiple(infoText, subline);
 
-    const newButton = kpxcUI.createElement('button', GREEN_BUTTON, { id: 'kpxc-banner-btn-new' }, tr('popupButtonNew'));
+    const newButton = kpxcUI.createElement('button', PRIMARY_BUTTON, { id: 'kpxc-banner-btn-new' }, tr('popupButtonNew'));
     const updateButton = kpxcUI.createElement(
         'button',
-        ORANGE_BUTTON,
+        SECONDARY_BUTTON,
         { id: 'kpxc-banner-btn-update' },
         tr('popupButtonUpdate'),
     );
     const dismissButton = kpxcUI.createElement(
         'button',
-        RED_BUTTON,
+        GHOST_BUTTON,
         { id: 'kpxc-banner-btn-dismiss' },
         tr('popupButtonCancel'),
     );
 
     const separator = kpxcUI.createElement('div', 'kpxc-separator');
+    const ignoreGroup = kpxcUI.createElement('div', 'kpxc-ignore');
     const ignoreCheckbox = kpxcUI.createElement('input', 'kpxc-checkbox', {
         type: 'checkbox',
         name: 'ignoreCheckbox',
@@ -98,7 +103,6 @@ kpxcBanner.create = async function(credentials = {}) {
 
     // No existing credentials to update --> disable Update button
     if (credentials.list.length === 0) {
-        updateButton.classList.remove('kpxc-orange-button');
         updateButton.disabled = true;
     }
 
@@ -142,8 +146,13 @@ kpxcBanner.create = async function(credentials = {}) {
     });
 
     kpxcBanner.banner = banner;
-    bannerInfo.appendMultiple(icon, infoText, usernameText, usernameSpan);
-    bannerButtons.appendMultiple(newButton, updateButton, separator, ignoreCheckbox, checkboxLabel, dismissButton);
+    if (!credentials.username) {
+        subline.hidden = true;
+    }
+
+    ignoreGroup.appendMultiple(ignoreCheckbox, checkboxLabel);
+    bannerInfo.appendMultiple(icon, bannerText);
+    bannerButtons.appendMultiple(ignoreGroup, separator, dismissButton, updateButton, newButton);
     banner.appendMultiple(bannerInfo, bannerButtons);
 
     initColorTheme(banner);
@@ -460,19 +469,5 @@ kpxcBanner.createGroupDialog = function() {
 };
 
 const setDialogPosition = function(dialog) {
-    if (!dialog) {
-        return;
-    }
-
-    if (kpxcBanner.banner.classList.contains('kpxc-banner-on-bottom')) {
-        dialog.style.bottom = Pixels(kpxcBanner.banner.offsetHeight);
-        dialog.classList.remove('kpxc-banner-dialog-top');
-        dialog.classList.add('kpxc-banner-dialog-bottom');
-    } else {
-        dialog.style.top = Pixels(kpxcBanner.banner.offsetHeight);
-        dialog.classList.remove('kpxc-banner-dialog-bottom');
-        dialog.classList.add('kpxc-banner-dialog-top');
-    }
-
-    dialog.style.right = Pixels(0);
+    kpxcUI.positionBannerDialog(kpxcBanner.banner, dialog);
 };

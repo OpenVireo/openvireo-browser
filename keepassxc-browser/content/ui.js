@@ -11,6 +11,9 @@ const BLUE_BUTTON = 'kpxc-button kpxc-blue-button';
 const GREEN_BUTTON = 'kpxc-button kpxc-green-button';
 const ORANGE_BUTTON = 'kpxc-button kpxc-orange-button';
 const RED_BUTTON = 'kpxc-button kpxc-red-button';
+const PRIMARY_BUTTON = 'kpxc-button kpxc-primary-button';
+const SECONDARY_BUTTON = 'kpxc-button kpxc-secondary-button';
+const GHOST_BUTTON = 'kpxc-button kpxc-ghost-button';
 const GRAY_BUTTON_CLASS = 'kpxc-gray-button';
 
 const ALLOWED_OBSERVER_NODETYPES = [
@@ -133,28 +136,51 @@ kpxcUI.makeBannerDraggable = function(banner) {
             e.target.classList.remove('kpxc-banner-on-top');
             e.target.classList.add('kpxc-banner-on-bottom');
 
-            if (bannerDialog) {
-                bannerDialog.style.top = '';
-                bannerDialog.style.bottom = Pixels(e.target.offsetHeight);
-                bannerDialog.classList.remove('kpxc-banner-dialog-top');
-                bannerDialog.classList.add('kpxc-banner-dialog-bottom');
-            }
+            kpxcUI.positionBannerDialog(e.target, bannerDialog);
             await sendMessage('banner_set_position', BannerPosition.BOTTOM);
         } else if (e.y < e.view.innerHeight * (1 / 3) && e.target.classList.contains('kpxc-banner-on-bottom')) {
             e.target.classList.remove('kpxc-banner-on-bottom');
             e.target.classList.add('kpxc-banner-on-top');
 
-            if (bannerDialog) {
-                bannerDialog.style.bottom = '';
-                bannerDialog.style.top = Pixels(e.target.offsetHeight);
-                bannerDialog.classList.remove('kpxc-banner-dialog-bottom');
-                bannerDialog.classList.add('kpxc-banner-dialog-top');
-            }
+            kpxcUI.positionBannerDialog(e.target, bannerDialog);
             await sendMessage('banner_set_position', BannerPosition.TOP);
         }
 
         document.removeEventListener('dragover', preventDefaultDragEnd);
     });
+};
+
+/**
+ * Places a banner dialog next to the floating banner: below it when the banner is at the top,
+ * above it when the banner is at the bottom, aligned to the banner's right edge.
+ * @param {HTMLElement} banner  The banner element
+ * @param {HTMLElement} dialog  The dialog shown with the banner
+ */
+kpxcUI.positionBannerDialog = function(banner, dialog) {
+    if (!banner || !dialog) {
+        return;
+    }
+
+    const gap = 8;
+    const rect = banner.getBoundingClientRect();
+    // The banner may live in the top document while this script runs in a frame.
+    const doc = banner.ownerDocument || document;
+    const win = doc.defaultView || window;
+    const viewportWidth = doc.documentElement.clientWidth || win.innerWidth;
+    const viewportHeight = doc.documentElement.clientHeight || win.innerHeight;
+    dialog.style.right = Pixels(Math.max(0, viewportWidth - rect.right));
+
+    if (banner.classList.contains('kpxc-banner-on-bottom')) {
+        dialog.style.top = '';
+        dialog.style.bottom = Pixels(Math.max(0, viewportHeight - rect.top + gap));
+        dialog.classList.remove('kpxc-banner-dialog-top');
+        dialog.classList.add('kpxc-banner-dialog-bottom');
+    } else {
+        dialog.style.bottom = '';
+        dialog.style.top = Pixels(rect.bottom + gap);
+        dialog.classList.remove('kpxc-banner-dialog-bottom');
+        dialog.classList.add('kpxc-banner-dialog-top');
+    }
 };
 
 /**

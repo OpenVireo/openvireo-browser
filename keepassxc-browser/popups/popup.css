@@ -61,9 +61,10 @@ hr {
 }
 
 .brand-name {
-    font-size: 14px;
-    font-weight: 650;
-    letter-spacing: -0.01em;
+    font-family: var(--ov-font-display);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
 }
 
 .action-buttons-area {
@@ -77,7 +78,7 @@ hr {
     --bs-btn-padding-y: 0;
     background: transparent !important;
     border: 0 !important;
-    border-radius: 8px !important;
+    border-radius: 50% !important;
     box-shadow: none !important;
     color: var(--ov-text-2) !important;
     font-size: 15px;
@@ -153,7 +154,7 @@ hr {
 .status-card {
     background: var(--ov-surface);
     border: 1px solid var(--ov-border);
-    border-radius: var(--ov-radius);
+    border-radius: var(--ov-radius-lg);
     padding: 14px;
 }
 
@@ -170,8 +171,10 @@ hr {
 }
 
 .status-title {
-    font-size: 14px;
-    font-weight: 600;
+    font-family: var(--ov-font-display);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .status-title + .muted {
@@ -195,7 +198,7 @@ hr {
 
 .status-badge--success {
     background: var(--ov-accent-soft);
-    color: var(--ov-accent);
+    color: var(--ov-accent-ink);
 }
 
 .status-badge--warning {
@@ -301,7 +304,7 @@ hr {
 .search-field .fa-search {
     color: var(--ov-text-3);
     font-size: 13px;
-    left: 11px;
+    left: 13px;
     pointer-events: none;
     position: absolute;
     top: 50%;
@@ -311,10 +314,10 @@ hr {
 #login-filter {
     background: var(--ov-surface) !important;
     border: 1px solid var(--ov-border) !important;
-    border-radius: 8px;
+    border-radius: var(--ov-radius-pill) !important;
     font-size: 13px;
     height: 36px;
-    padding: 0 12px 0 32px;
+    padding: 0 14px 0 34px;
     width: 100%;
 }
 
@@ -339,7 +342,7 @@ hr {
     align-items: center;
     background: transparent !important;
     border: 0 !important;
-    border-radius: 8px !important;
+    border-radius: var(--ov-radius-row) !important;
     color: var(--ov-text) !important;
     cursor: pointer;
     display: flex;
@@ -363,7 +366,7 @@ hr {
     --avatar-hue: 110;
     align-items: center;
     background: hsl(var(--avatar-hue) 55% 92%);
-    border-radius: 8px;
+    border-radius: 10px;
     color: hsl(var(--avatar-hue) 50% 30%);
     display: inline-flex;
     flex-shrink: 0;

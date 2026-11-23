@@ -1,0 +1,32 @@
+/* Inter (body) and Inter Tight (headings), SIL OFL 1.1: see the *-OFL.txt files. */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('Inter-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600 700;
+    font-display: swap;
+    src: url('Inter-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter Tight';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('InterTight-Bold.woff2') format('woff2');
+}

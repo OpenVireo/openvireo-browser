@@ -1382,6 +1382,26 @@
         "message": "Contributors",
         "description": "About page text of contributors."
     },
+    "optionsAboutMaintainers": {
+        "message": "Maintainers",
+        "description": "About page heading for the list of maintainers."
+    },
+    "optionsAboutBuiltBy": {
+        "message": "OpenVireo Browser is built by",
+        "description": "About page text before the link to the contributors on GitHub."
+    },
+    "optionsAboutBuiltByLink": {
+        "message": "its contributors on GitHub",
+        "description": "About page link text to the OpenVireo Browser contributors."
+    },
+    "optionsAboutBasedOn": {
+        "message": "It is based on KeePassXC-Browser and includes the work of",
+        "description": "About page credit for the upstream project, before the link to its contributors."
+    },
+    "optionsAboutBasedOnLink": {
+        "message": "its contributors",
+        "description": "About page link text to the KeePassXC-Browser contributors."
+    },
     "optionsAboutLicenses": {
         "message": "Licenses",
         "description": "About page text of licenses."

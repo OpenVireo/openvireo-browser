@@ -9,87 +9,99 @@
 
 :root,
 [data-bs-theme='light'] {
-    --ov-accent: #3e7827;
-    --ov-accent-hover: #346a20;
-    --ov-accent-soft: rgba(62, 120, 39, 0.1);
+    --ov-accent: #3c7d20;
+    --ov-accent-hover: #336b1b;
+    --ov-accent-soft: #e7f1e1;
     --ov-accent-text: #ffffff;
+    --ov-accent-ink: #2f6a18;
     --ov-bg: #ffffff;
-    --ov-surface: #f6f7f9;
-    --ov-surface-2: #eef0f3;
+    --ov-canvas: #f3f6f2;
+    --ov-surface: #f6f8f5;
+    --ov-surface-2: #eef2ec;
     --ov-elevated: #ffffff;
-    --ov-border: #e4e6ea;
-    --ov-border-strong: #d3d6dc;
-    --ov-text: #1b1d21;
-    --ov-text-2: #5c6270;
-    --ov-text-3: #8a909c;
-    --ov-danger: #d93a3a;
-    --ov-danger-soft: rgba(217, 58, 58, 0.1);
-    --ov-warning: #b7791f;
-    --ov-warning-soft: rgba(214, 158, 46, 0.14);
-    --ov-info-soft: rgba(37, 99, 235, 0.08);
-    --ov-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
-    --ov-shadow: 0 1px 3px rgba(16, 24, 40, 0.06), 0 1px 2px rgba(16, 24, 40, 0.04);
-    --ov-shadow-lg: 0 12px 32px -8px rgba(16, 24, 40, 0.18);
-    --ov-focus: 0 0 0 3px rgba(62, 120, 39, 0.25);
-    --bs-link-color-rgb: 62, 120, 39;
+    --ov-border: #e0e6df;
+    --ov-border-strong: #c8d0c6;
+    --ov-input-border: #7d877f;
+    --ov-text: #0b0f0c;
+    --ov-text-2: #4c574f;
+    --ov-text-3: #636e66;
+    --ov-danger: #c42b1c;
+    --ov-danger-soft: #fde7e9;
+    --ov-warning: #8a5300;
+    --ov-warning-soft: #fbefd9;
+    --ov-info-soft: #eef2ec;
+    --ov-shadow-sm: 0 1px 2px rgba(7, 16, 10, 0.05);
+    --ov-shadow: 0 1px 3px rgba(7, 16, 10, 0.06), 0 1px 2px rgba(7, 16, 10, 0.04);
+    --ov-shadow-lg: 0 18px 40px -12px rgba(7, 16, 10, 0.22);
+    --ov-focus: 0 0 0 3px rgba(60, 125, 32, 0.28);
+    --bs-link-color-rgb: 47, 106, 24;
     --ov-radius-sm: 6px;
-    --ov-radius: 10px;
-    --ov-radius-lg: 14px;
-    --ov-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI Variable', 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --ov-radius: 12px;
+    --ov-radius-lg: 18px;
+    --ov-radius-row: 12px;
+    --ov-radius-pill: 999px;
+    --ov-font: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --ov-font-display: 'Inter Tight', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-bs-theme='light']) {
-        --ov-accent: #6ab536;
-        --ov-accent-hover: #7cc847;
-        --ov-accent-soft: rgba(106, 181, 54, 0.14);
-        --ov-accent-text: #0f1a09;
-        --ov-bg: #1a1b1f;
-        --ov-surface: #222328;
-        --ov-surface-2: #2b2c32;
-        --ov-elevated: #26272c;
-        --ov-border: #33353b;
-        --ov-border-strong: #42444b;
-        --ov-text: #ececef;
-        --ov-text-2: #a3a7b1;
-        --ov-text-3: #767b86;
-        --ov-danger: #f0605d;
-        --ov-danger-soft: rgba(240, 96, 93, 0.14);
-        --ov-warning: #e5b454;
-        --ov-warning-soft: rgba(229, 180, 84, 0.14);
-        --ov-info-soft: rgba(96, 145, 255, 0.12);
+        --ov-accent: #8fd16f;
+        --ov-accent-hover: #a3dc87;
+        --ov-accent-soft: #1a261c;
+        --ov-accent-text: #07100a;
+        --ov-accent-ink: #8fd16f;
+        --ov-bg: #0f1411;
+        --ov-canvas: #121813;
+        --ov-surface: #121813;
+        --ov-surface-2: #1c241e;
+        --ov-elevated: #161c18;
+        --ov-border: #2a332d;
+        --ov-border-strong: #3a453d;
+        --ov-input-border: #8a958d;
+        --ov-text: #eef2ef;
+        --ov-text-2: #a9b3ab;
+        --ov-text-3: #86918a;
+        --ov-danger: #ff99a4;
+        --ov-danger-soft: #3b1f22;
+        --ov-warning: #f0c36d;
+        --ov-warning-soft: #332a17;
+        --ov-info-soft: #1c241e;
         --ov-shadow-sm: none;
         --ov-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
-        --ov-shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.6);
-        --ov-focus: 0 0 0 3px rgba(106, 181, 54, 0.3);
-        --bs-link-color-rgb: 106, 181, 54;
+        --ov-shadow-lg: 0 18px 44px -10px rgba(0, 0, 0, 0.65);
+        --ov-focus: 0 0 0 3px rgba(143, 209, 111, 0.32);
+        --bs-link-color-rgb: 143, 209, 111;
     }
 }
 
 [data-bs-theme='dark'] {
-    --ov-accent: #6ab536;
-    --ov-accent-hover: #7cc847;
-    --ov-accent-soft: rgba(106, 181, 54, 0.14);
-    --ov-accent-text: #0f1a09;
-    --ov-bg: #1a1b1f;
-    --ov-surface: #222328;
-    --ov-surface-2: #2b2c32;
-    --ov-elevated: #26272c;
-    --ov-border: #33353b;
-    --ov-border-strong: #42444b;
-    --ov-text: #ececef;
-    --ov-text-2: #a3a7b1;
-    --ov-text-3: #767b86;
-    --ov-danger: #f0605d;
-    --ov-danger-soft: rgba(240, 96, 93, 0.14);
-    --ov-warning: #e5b454;
-    --ov-warning-soft: rgba(229, 180, 84, 0.14);
-    --ov-info-soft: rgba(96, 145, 255, 0.12);
+    --ov-accent: #8fd16f;
+    --ov-accent-hover: #a3dc87;
+    --ov-accent-soft: #1a261c;
+    --ov-accent-text: #07100a;
+    --ov-accent-ink: #8fd16f;
+    --ov-bg: #0f1411;
+    --ov-canvas: #121813;
+    --ov-surface: #121813;
+    --ov-surface-2: #1c241e;
+    --ov-elevated: #161c18;
+    --ov-border: #2a332d;
+    --ov-border-strong: #3a453d;
+    --ov-input-border: #8a958d;
+    --ov-text: #eef2ef;
+    --ov-text-2: #a9b3ab;
+    --ov-text-3: #86918a;
+    --ov-danger: #ff99a4;
+    --ov-danger-soft: #3b1f22;
+    --ov-warning: #f0c36d;
+    --ov-warning-soft: #332a17;
+    --ov-info-soft: #1c241e;
     --ov-shadow-sm: none;
     --ov-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
-    --ov-shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.6);
-    --ov-focus: 0 0 0 3px rgba(106, 181, 54, 0.3);
-    --bs-link-color-rgb: 106, 181, 54;
+    --ov-shadow-lg: 0 18px 44px -10px rgba(0, 0, 0, 0.65);
+    --ov-focus: 0 0 0 3px rgba(143, 209, 111, 0.32);
+    --bs-link-color-rgb: 143, 209, 111;
 }
 
 /* Map the old tokens onto the new palette so existing page CSS follows along. */
@@ -100,8 +112,8 @@
     --kpxc-card-border-color: var(--ov-border);
     --kpxc-card-header-color: var(--ov-elevated);
     --kpxc-input-background-color: var(--ov-bg);
-    --kpxc-input-main-border-color: var(--ov-border-strong);
-    --kpxc-link-color: var(--ov-accent);
+    --kpxc-input-main-border-color: var(--ov-input-border);
+    --kpxc-link-color: var(--ov-accent-ink);
     --kpxc-link-hover-color: var(--ov-accent-hover);
     --kpxc-sidebar-background-color: var(--ov-surface);
     --kpxc-table-border-color: var(--ov-border);
@@ -121,11 +133,17 @@
     --bs-border-radius: var(--ov-radius-sm);
     --bs-border-radius-sm: var(--ov-radius-sm);
     --bs-border-radius-lg: var(--ov-radius);
-    --bs-link-color: var(--ov-accent);
+    --bs-link-color: var(--ov-accent-ink);
     --bs-link-hover-color: var(--ov-accent-hover);
     --bs-primary: var(--ov-accent);
     --bs-focus-ring-color: var(--ov-accent-soft);
     --bs-table-bg: transparent;
+}
+
+h1, h2, h3, .h1, .h2, .h3, .ov-display {
+    font-family: var(--ov-font-display);
+    font-weight: 700;
+    letter-spacing: -0.025em;
 }
 
 html,
@@ -143,7 +161,7 @@ body {
 
 .btn {
     --bs-btn-font-weight: 500;
-    --bs-btn-border-radius: var(--ov-radius-sm);
+    --bs-btn-border-radius: var(--ov-radius-pill);
     --bs-btn-focus-box-shadow: var(--ov-focus);
     align-items: center;
     display: inline-flex;
@@ -157,7 +175,7 @@ body {
     --bs-btn-padding-y: 0.3rem;
     --bs-btn-padding-x: 0.75rem;
     --bs-btn-font-size: 0.8125rem;
-    --bs-btn-border-radius: var(--ov-radius-sm);
+    --bs-btn-border-radius: var(--ov-radius-pill);
 }
 
 .btn .fa {
@@ -223,8 +241,8 @@ input[type="text"],
 input[type="url"],
 input[type="number"],
 input[type="search"] {
-    background-color: var(--ov-bg) !important;
-    border: 1px solid var(--ov-border-strong) !important;
+    background-color: var(--ov-elevated) !important;
+    border: 1px solid var(--ov-input-border) !important;
     border-radius: var(--ov-radius-sm);
     color: var(--ov-text) !important;
     transition: border-color .12s ease, box-shadow .12s ease;
@@ -242,7 +260,7 @@ input[type="search"]:focus {
 }
 
 .form-check-input {
-    border-color: var(--ov-border-strong);
+    border-color: var(--ov-input-border);
 }
 
 .form-check-input:focus {
@@ -350,4 +368,17 @@ kbd {
 * {
     scrollbar-color: var(--ov-border-strong) transparent;
     scrollbar-width: thin;
+}
+
+/* Search boxes and badges are pills, as in the web and desktop apps. */
+input[type="search"],
+.form-control[type="search"] {
+    border-radius: var(--ov-radius-pill) !important;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+}
+
+.badge {
+    border-radius: var(--ov-radius-pill);
+    font-weight: 600;
 }

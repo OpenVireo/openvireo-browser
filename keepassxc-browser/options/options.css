@@ -231,9 +231,10 @@ main .content {
 }
 
 .tab > h2 {
-    font-size: 26px;
+    font-family: var(--ov-font-display);
+    font-size: 30px;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     margin-bottom: 4px;
 }
 
@@ -265,10 +266,11 @@ main .content {
 .sidebar-brand {
     align-items: center;
     color: var(--ov-text);
-    font-size: 15px;
-    font-weight: 650;
+    font-family: var(--ov-font-display);
+    font-size: 17px;
+    font-weight: 700;
     gap: 10px;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.025em;
     margin: 22px 0 18px;
     padding: 0 10px;
 }
@@ -281,7 +283,10 @@ main .content {
 
 .sidebar-brand-sub {
     color: var(--ov-text-2);
+    font-family: var(--ov-font);
+    font-size: 14px;
     font-weight: 500;
+    letter-spacing: 0;
 }
 
 .sidebar .nav {
@@ -291,9 +296,10 @@ main .content {
 .sidebar .nav-link {
     align-items: center;
     border: 0;
-    border-radius: 8px;
+    border-radius: var(--ov-radius-row);
     color: var(--ov-text-2) !important;
     display: flex;
+    position: relative;
     font-size: 13.5px;
     font-weight: 500;
     gap: 10px;
@@ -316,12 +322,25 @@ main .content {
 
 .sidebar .active > .nav-link {
     background: var(--ov-accent-soft);
-    color: var(--ov-accent) !important;
+    color: var(--ov-text) !important;
     font-weight: 600;
 }
 
+/* Short accent bar on the selected row, as in the vault's group list. */
+.sidebar .active > .nav-link::before {
+    background: var(--ov-accent);
+    border-radius: 2px;
+    content: '';
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+}
+
 .sidebar .active > .nav-link .fa {
-    color: var(--ov-accent);
+    color: var(--ov-accent-ink);
 }
 
 .sidebar span.menu-item {
@@ -353,19 +372,20 @@ main .content {
     border-bottom: 1px solid var(--ov-border);
     color: var(--ov-text);
     display: flex;
-    font-size: 15px;
-    font-weight: 600;
+    font-family: var(--ov-font-display);
+    font-size: 17px;
+    font-weight: 700;
     gap: 8px;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.025em;
     margin: 0;
     padding: 14px 20px;
 }
 
 .card-header > .fa {
     align-items: center;
-    background: var(--ov-surface-2);
-    border-radius: 7px;
-    color: var(--ov-text-2);
+    background: var(--ov-accent-soft);
+    border-radius: 9px;
+    color: var(--ov-accent-ink);
     display: inline-flex;
     flex-shrink: 0;
     font-size: 13px;
@@ -395,6 +415,18 @@ main .content {
     color: var(--ov-text);
     font-size: 13px;
     font-weight: 600;
+}
+
+/* ---------- About ---------- */
+
+.about-maintainers {
+    margin-bottom: 12px;
+    padding-left: 1.25rem;
+}
+
+.about-credits {
+    color: var(--ov-text-2);
+    font-size: 13px;
 }
 
 /* ---------- Tables, modals, dropdowns ---------- */

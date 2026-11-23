@@ -1,58 +1,113 @@
+/* Buttons for the in-page bars. Pills, as in the web and desktop apps. */
+
 .kpxc-button {
-    background-color: #fff;
+    align-items: center;
+    background-color: var(--kpxc-card-background-color);
     background-image: none !important;
-    border: 1px solid #ccc !important;
-    border-radius: .25em !important;
-    font-size: 12px !important;
-    font-family: 'Lato', sans-serif !important;
-    height: 28px !important;
-    margin: .2em !important;
-    padding: 1px 7px 2px !important;
+    border: 1px solid var(--kpxc-border-strong-color) !important;
+    border-radius: 999px !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    color: var(--kpxc-text-color) !important;
+    cursor: pointer !important;
+    display: inline-flex;
+    font-family: var(--kpxc-font) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    height: 34px !important;
+    justify-content: center;
+    letter-spacing: -0.005em;
+    line-height: 1 !important;
+    margin: 0 !important;
+    min-width: 0;
+    padding: 0 16px !important;
+    text-transform: none !important;
     text-wrap: nowrap;
+    transition: background-color .12s ease, border-color .12s ease, color .12s ease, filter .12s ease;
 }
 
+.kpxc-button:focus-visible {
+    box-shadow: var(--kpxc-focus-ring) !important;
+    outline: none !important;
+}
+
+/* Save bar */
+.kpxc-primary-button {
+    background-color: var(--kpxc-accent-color) !important;
+    border-color: var(--kpxc-accent-color) !important;
+    color: var(--kpxc-accent-text-color) !important;
+}
+
+.kpxc-primary-button:hover:not(:disabled) {
+    background-color: var(--kpxc-accent-hover-color) !important;
+    border-color: var(--kpxc-accent-hover-color) !important;
+}
+
+.kpxc-secondary-button {
+    background-color: var(--kpxc-card-background-color) !important;
+    border-color: var(--kpxc-border-strong-color) !important;
+    color: var(--kpxc-text-color) !important;
+}
+
+.kpxc-secondary-button:hover:not(:disabled) {
+    background-color: var(--kpxc-table-hover-color) !important;
+}
+
+.kpxc-ghost-button {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: var(--kpxc-lighter-text-color) !important;
+}
+
+.kpxc-ghost-button:hover:not(:disabled) {
+    background-color: var(--kpxc-table-hover-color) !important;
+    color: var(--kpxc-text-color) !important;
+}
+
+/* Custom login fields bar: the hues match the field highlights in define.css, as soft tints. */
 .kpxc-white-button {
-    background-color: #f8f9fa !important;
-    border-color: #f8f9fa !important;
-    color: #212529 !important;
+    background-color: var(--kpxc-surface-color) !important;
+    border-color: var(--kpxc-border-color) !important;
+    color: var(--kpxc-text-color) !important;
 }
 
 .kpxc-red-button {
-    background-color: #dc3545 !important;
-    border-color: #dc3545 !important;
-    color: #fff !important;
+    background-color: var(--kpxc-danger-background-color) !important;
+    border-color: transparent !important;
+    color: var(--kpxc-danger-color) !important;
 }
 
 .kpxc-orange-button {
-    background-color: #ffc107 !important;
-    border-color: #ffc107 !important;
-    color: #212529 !important;
+    background-color: var(--kpxc-caution-background-color) !important;
+    border-color: transparent !important;
+    color: var(--kpxc-caution-color) !important;
 }
 
 .kpxc-blue-button {
-    background-color: #007bff !important;
-    border-color: #007bff !important;
-    color: #fff !important;
+    background-color: var(--kpxc-card-background-color) !important;
+    border-color: var(--kpxc-border-strong-color) !important;
+    color: var(--kpxc-text-color) !important;
 }
 
 .kpxc-green-button {
-    background-color: #28a745 !important;
-    border-color: #28a745 !important;
-    color: #fff !important;
+    background-color: var(--kpxc-accent-color) !important;
+    border-color: var(--kpxc-accent-color) !important;
+    color: var(--kpxc-accent-text-color) !important;
 }
 
-.kpxc-button:hover {
-    cursor: pointer !important;
-    filter: brightness(92%) !important;
-    transition: all .15s;
+.kpxc-button:hover:not(:disabled):not(.kpxc-primary-button):not(.kpxc-secondary-button):not(.kpxc-ghost-button) {
+    filter: brightness(0.96) !important;
 }
 
-.kpxc-button:disabled, .kpxc-gray-button {
-    background-color: #777777 !important;
-    border-color: #444444 !important;
-    color: #fff !important;
+.kpxc-button:disabled {
+    cursor: not-allowed !important;
+    filter: none !important;
+    opacity: 0.45;
 }
 
-.kpxc-button:disabled:hover {
-    background-color: #777777 !important;
+/* A field type that has already been picked. */
+.kpxc-gray-button {
+    background-color: var(--kpxc-surface-color) !important;
+    border-color: var(--kpxc-border-color) !important;
+    color: var(--kpxc-light-text-color) !important;
 }
