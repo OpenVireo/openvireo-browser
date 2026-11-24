@@ -25,7 +25,7 @@ div.kpxc-banner {
     letter-spacing: normal !important;
     line-height: 1.35 !important;
     margin: 0 auto !important;
-    max-width: 880px !important;
+    max-width: 980px !important;
     min-height: 0 !important;
     padding: 10px 10px 10px 12px !important;
     position: fixed !important;
@@ -95,7 +95,7 @@ div.kpxc-banner div.banner-buttons {
 }
 
 div.kpxc-banner div.banner-info {
-    flex: 1 1 260px;
+    flex: 1 1 300px;
 }
 
 div.kpxc-banner div.banner-buttons {
@@ -163,6 +163,7 @@ div.kpxc-banner .kpxc-help-icon-safari {
 
 div.kpxc-banner .banner-text {
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     gap: 3px;
     min-width: 0;
@@ -182,6 +183,11 @@ div.kpxc-banner .banner-subline {
     min-width: 0;
 }
 
+/* Labels never shrink; the username gives way only past its own max-width. */
+div.kpxc-banner .small:not(.information-username) {
+    flex-shrink: 0;
+}
+
 div.kpxc-banner .banner-subline[hidden] {
     display: none;
 }
@@ -195,11 +201,15 @@ div.kpxc-banner .information-username {
     background-color: var(--kpxc-surface-color);
     border: 1px solid var(--kpxc-border-color);
     border-radius: 999px;
-    color: var(--kpxc-text-color);
-    font-weight: 500;
-    max-width: 260px;
+    box-sizing: border-box;
+    color: var(--kpxc-text-color) !important;
+    flex: 0 1 auto;
+    font-size: 13px !important;
+    font-weight: 600;
+    max-width: 100%;
+    min-width: min(16ch, 100%);
     overflow: hidden;
-    padding: 1px 9px;
+    padding: 2px 10px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }

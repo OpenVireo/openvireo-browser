@@ -69,7 +69,12 @@ kpxcBanner.create = async function(credentials = {}) {
     const infoText = kpxcUI.createElement('span', 'banner-info-text', {}, tr('rememberInfoText'));
     const subline = kpxcUI.createElement('div', 'banner-subline');
     const usernameText = kpxcUI.createElement('span', 'small', {}, tr('popupUsername'));
-    const usernameSpan = kpxcUI.createElement('span', 'small info information-username', {}, credentials.username);
+    const usernameSpan = kpxcUI.createElement(
+        'span',
+        'small info information-username',
+        { title: credentials.username },
+        credentials.username,
+    );
     subline.appendMultiple(usernameText, usernameSpan);
     bannerText.appendMultiple(infoText, subline);
 
