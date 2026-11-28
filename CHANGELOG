@@ -1,4 +1,10 @@
-1.0.0 (unreleased)
+1.0.1 (2026-11-27)
+=========================
+- Match the OpenVireo app's refreshed look, with the Inter fonts bundled
+- Restyle the save bar and keep the username readable in it
+- Replace the old logo in the in-field disconnected and locked icons
+
+1.0.0 (2026-11-11)
 =========================
 - First OpenVireo Browser release, versioned with the OpenVireo app from now on (based on KeePassXC-Browser 1.10.4.1)
 - Rebrand KeePassXC-Browser as OpenVireo Browser; it pairs with the OpenVireo app
